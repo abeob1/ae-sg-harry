@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="App">
+
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/style.css" />
+ 
+
+  <!-- SPELLS -->
+   <script src="js/lib/jquery.min.js"></script>
+   <script src="js/lib/jquery-ui.js"></script>
+   <script src="js/lib/bootstrap.js"></script>
+  <script src="js/lib/angular.js"></script>
+  <script src="js/lib/angular-route.js"></script>
+ <script src="js/lib/angular-cookies.js"></script>
+ 
+  
+  <script src="Main.js"></script>
+
+   <script src="js/util_factory.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="mainController">
+<div class="loaderss" data-loadingss id="loadingss" style="position:fixed"><i class="fa fa-refresh fa-spin fa-fw"></i> Loading...</div>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-hide="loginpage">
+    <div class="container-fluid">
+        <!-- logo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Harry's</a>
+        </div>
+        <!-- menu -->
+        <div class="collapse navbar-collapse navbar-right" id="mynavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/menu"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a href="#/"><i class="fa fa-power-off" aria-hidden="true"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <div id="main" style="margin-top:80px;" >
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  
+  <footer class="text-center" ng-hide="loginpage">
+    
+  
+  
+  </footer>
+  
+</body>
+<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</html>

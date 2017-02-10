@@ -1,0 +1,91 @@
+<div class="col-lg-12"><div class="panel panel-default">
+  <div class="panel-heading">Receive BAR Items Into OUTLET</div>
+  <div class="panel-body">
+  <table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="24%">Outlet</td>
+    <td width="2%">:</td>
+    <td width="74%">{{OutletName}}</td>
+  </tr>
+  <tr>
+    <td>User </td>
+    <td>:</td>
+    <td>{{Username}}</td>
+  </tr>
+  <tr>
+    <td>Order Date </td>
+    <td>:</td>
+    <td><div class="input-group">
+      <input type="text" class="form-control datepicker" ng-model="orderdate"  />
+      <span class="input-group-btn">
+        <button class="btn btn-danger" onclick="dp();" type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+      </span>
+    </div></td>
+  </tr>
+</table>
+
+<div style="border-bottom:solid 1px #CCCCCC;"></div>
+
+<div class="col-lg-12" style="padding:10px 0px 10px 0px;">Supplier: {{supplierName}}</div>
+
+<div style="margin-top:10px;"><table class="table table-hover" width="100%" border="0" cellspacing="5" cellpadding="5">
+  <thead style="background:#464a4c;color:#FFFFFF">
+  <tr>
+    <th width="14%">PO #</th>
+    <th width="37%">Description</th>
+    <th width="14%">Order Qty</th>
+	<th width="17%">Rece ipt Qty</th>
+	<th width="18%">Reason Code</th>
+  </tr>
+  </thead>
+  <tr ng-repeat="d in Outlet_Details" >
+    <td>{{d.DocNum}}</td>
+    <td>{{d.Dscription}}</td>
+    <td>{{d.OpenQty}}</td>
+	<td><input type="number" class="form-control" ng-model="d.ReceiptQty"  /></td>
+	<td><select class="form-control" ng-options="item as item.Name for item in ReasonCode track by item.Code" ng-model="d.ResonCode" ng-change="setRcode($index,d.ResonCode);">
+							</select></td>
+  </tr>
+  <tr ng-show="!Outlet_Details.length">
+    <td colspan="5" align="center" style="color:#990000;">No Record..</td>
+    </tr>
+</table>
+
+<div class="col-lg-12" align="center"><button style="width:300px;" type="button" class="btn btn-success" ng-click="ADD();">ADD</button></div>
+</div>
+  
+					
+					
+	</div>
+</div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Alert</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{msg}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  ng-click="AddData('N')">NO</button>
+		<button type="button" class="btn btn-success" ng-click="AddData('Y')">YES</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script >function dp()
+{
+$(".datepicker").datepicker( "show" );
+}</script>

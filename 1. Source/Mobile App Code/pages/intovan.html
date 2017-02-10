@@ -1,0 +1,50 @@
+<div class="col-lg-12"><div class="panel panel-default">
+  <div class="panel-heading">Receive into VAN</div>
+  <div class="panel-body">
+  <table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="24%">User</td>
+    <td width="2%">:</td>
+    <td width="74%">{{rootuser}}</td>
+  </tr>
+  <tr>
+    <td>For Outlet </td>
+    <td>:</td>
+    <td><select class="form-control" ng-model="OutLet" ng-change="outletchanged();" >
+							<option ng-repeat="d in OutLetList" value="{{d.WhsCode}}" ng-selected="d.WhsCode==' --- Select Outlet --- '" >{{d.WhsName}}</option>
+			  </select></td>
+  </tr>
+  <tr>
+    <td>Receipt Date </td>
+    <td>:</td>
+    <td>{{rootDate}}</td>
+  </tr>
+</table>
+
+<!--<div style="border-bottom:solid 1px #CCCCCC;"></div>-->
+
+<div style="margin-top:10px;"><table class="table table-hover" width="100%" border="0" cellspacing="5" cellpadding="5">
+  <thead style="background:#464a4c;color:#FFFFFF">
+  <tr>
+    <th width="21%">Req #</th>
+    <th width="65%">Item</th>
+    <th width="14%">Rec'd Qty</th>
+  </tr>
+  </thead>
+  <tr ng-repeat="d in VANList" ng-click="GOTOVANetails(d);">
+    <td>{{d.RequestNo}}</td>
+    <td>{{d.ToOutlet}}</td>
+    <td>{{d.SYS2RequestNo}}</td>
+  </tr>
+  <tr ng-show="!VANList.length">
+    <td colspan="3" align="center" style="color:#990000;">No Record..</td>
+    </tr>
+</table>
+</div>
+  
+					
+					
+	</div>
+</div>
+
+</div>

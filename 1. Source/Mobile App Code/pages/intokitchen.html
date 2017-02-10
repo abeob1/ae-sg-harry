@@ -1,0 +1,58 @@
+<div class="col-lg-12"><div class="panel panel-default">
+  <div class="panel-heading">Receive Kitchen Items Into OUTLET</div>
+  <div class="panel-body">
+  <table width="100%" border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <td width="24%">User</td>
+    <td width="2%">:</td>
+    <td width="74%">{{rootuser}}</td>
+  </tr>
+  <tr>
+    <td>For Outlet </td>
+    <td>:</td>
+    <td><select class="form-control" ng-model="OutLet" ng-change="outletchanged();" >
+							<option ng-repeat="d in OutLetList" value="{{d.WhsCode}}" ng-selected="d.WhsCode==' --- Select Outlet --- '">{{d.WhsName}}</option>
+			  </select></td>
+  </tr>
+  <tr>
+    <td>Receipt Date </td>
+    <td>:</td>
+    <td>{{rootDate}}</td>
+  </tr>
+</table>
+
+<div style="border-bottom:solid 1px #CCCCCC;"></div>
+
+
+<div class="col-lg-12" style="padding:10px 0px 10px 0px;"><span ng-hide="CKTHide"><input name=""  ng-click="CKclicked();" ng-model="CK"  type="checkbox" value="" /> central kitchen</span><span> <input name="" type="checkbox" ng-click="CSclicked();"  ng-model="CS" value="" /> Choose Supplier</span></div>
+<div class="col-lg-12"> <div class="input-group">
+      <input type="text" class="form-control" placeholder=""  ng-model="supplier" ng-disabled="CK">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" ng-click="CSSEARCH();"  ng-disabled="CK" type="button">Search</button>
+      </span>
+    </div>  </div>
+<div style="margin-top:10px;"><table class="table table-hover" width="100%" border="0" cellspacing="5" cellpadding="5">
+  <thead style="background:#464a4c;color:#FFFFFF">
+  <tr>
+    <th width="21%">Req #</th>
+    <th width="65%">Vendor</th>
+    <th width="14%">Open POs</th>
+  </tr>
+  </thead>
+  <tr ng-repeat="d in POList" ng-click="GOTOKITCHENDetails(d);">
+    <td>{{$index+1}}</td>
+    <td>{{d.CardName}}</td>
+    <td>{{d.NoOfOpenPO}}</td>
+  </tr>
+  <tr ng-show="!POList.length">
+    <td colspan="3" align="center" style="color:#990000;">No Record..</td>
+    </tr>
+</table>
+</div>
+  
+					
+					
+	</div>
+</div>
+
+</div>
