@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\Documents\Harry's\Publish_Website" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="ErrorPage.aspx" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="bin/AE_Harrys.Common.dll" publishTime="05/23/2016 18:20:36" />
+    <file relUrl="Images/Logo_Small.png" publishTime="06/05/2015 13:32:40" />
+    <file relUrl="Images/pattern.png" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="Images/bgButton_disable.png" publishTime="06/05/2015 13:32:40" />
+    <file relUrl="Images/harrys_logo.jpg" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="bin/AE_Harrys.DAL.pdb" publishTime="05/23/2016 18:20:33" />
+    <file relUrl="Homepage.aspx" publishTime="07/16/2015 16:08:24" />
+    <file relUrl="RequestReduceContent/97e2cdbd824fe648d5540eac1753d3f5-e643493d96b2fb5a1c3cc0d753cef02c-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="Web.config" publishTime="05/11/2016 16:19:48" />
+    <file relUrl="InventoryTransferRequest.aspx" publishTime="06/23/2015 16:47:20" />
+    <file relUrl="InventoryTransfer.aspx" publishTime="06/05/2015 13:32:48" />
+    <file relUrl="bin/ReceiveIntoOutletDetails.aspx" publishTime="04/01/2016 13:41:18" />
+    <file relUrl="Main.Master" publishTime="06/10/2015 13:02:46" />
+    <file relUrl="MaterialRequestApproval.aspx" publishTime="06/10/2015 13:02:46" />
+    <file relUrl="MaterialRequestApprovalNew.aspx" publishTime="06/10/2015 13:02:46" />
+    <file relUrl="RecieveIntoOutlet.aspx" publishTime="01/05/2016 07:41:02" />
+    <file relUrl="Global.asax" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="ReceiveIntoOutletDetails.aspx" publishTime="04/01/2016 13:41:18" />
+    <file relUrl="Scripts/WaterMark.min.js" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="bin/AE_HarrysWeb_V001.dll" publishTime="05/23/2016 18:21:07" />
+    <file relUrl="Images/Calender.jpg" publishTime="06/05/2015 13:32:40" />
+    <file relUrl="MaterialRequestBySupplier.aspx" publishTime="07/16/2015 16:08:24" />
+    <file relUrl="bin/ReceiveIntoOutletDetails.aspx.cs" publishTime="05/20/2016 09:31:14" />
+    <file relUrl="Images/loading1.gif" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="Login.aspx" publishTime="06/05/2015 13:32:36" />
+    <file relUrl="ListOfMaterialRequestDraft.aspx" publishTime="06/10/2015 13:02:46" />
+    <file relUrl="bin/ReceiveIntoOutletDetails.aspx.designer.cs" publishTime="07/20/2015 14:50:52" />
+    <file relUrl="Scripts/jsUpdateProgress.js" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="StocktakeCounting.aspx" publishTime="11/19/2015 11:26:00" />
+    <file relUrl="JQuery/jquery-1.9.1.js" publishTime="06/05/2015 13:32:34" />
+    <file relUrl="RequestReduceContent/0a25c32909f366d9fc079173058c3772-440a3737b9e74bfdd1f1d3d78f942c5c-requestreducedstyle.css" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="StocktakeCountingSheet.aspx" publishTime="11/18/2015 10:23:12" />
+    <file relUrl="ListOfInventoryTransfer.aspx" publishTime="06/23/2015 15:35:38" />
+    <file relUrl="JQuery/jquery-ui.css" publishTime="06/05/2015 13:32:34" />
+    <file relUrl="Scripts/common.js" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="Images/Red.png" publishTime="07/20/2015 14:50:52" />
+    <file relUrl="MaterialRequestByItem.aspx" publishTime="06/10/2015 13:02:48" />
+    <file relUrl="RequestReduceContent/89cb985d22f2988f49a780deecd9a87d-7b06cc82e674f5b5ebf57d3d7e81ba55-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="ApprovalStatusSummary.aspx" publishTime="06/23/2015 13:37:44" />
+    <file relUrl="RequestReduceContent/1227b6ca5888c2d8965d1d1890a952ce-94494b2c975e4fc4ec647c13e1598bd3-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="RequestReduceContent/5e45592b3a5ca48aeb9f7bf57cb207ce-e74fcc54c3da32cab49c89dab8da74e2-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="Styles/Styles.css" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="Images/loading3.gif" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="MaterialRequestApproved.aspx" publishTime="07/20/2015 14:50:52" />
+    <file relUrl="Scripts/main.js" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="Images/icon_minus.png" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="RequestReduceContent/a346bb22cad6a7371381d1eaaabdebaf-f71fe20fec1e6c9bb7074041a2da7ec7-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="MaterialRequestDraft.aspx" publishTime="06/23/2015 11:46:12" />
+    <file relUrl="Site.Master" publishTime="06/16/2015 11:58:02" />
+    <file relUrl="RequestReduceContent/40cd66f39bbe34ff31e7d59bf669b287-ce6cbf952ac0d85ddc6b6a388a98b257-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="RequestReduceContent/cae29d541d15c494ace1ad227927484c-84d777213244e512651ea5ccfbc6c41f-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="RequestReduceContent/11f16efd60f1b1f11ed1e174a8210d26-ef573d6cc0b7d4641789093a444e7952-requestreducedstyle.css" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="Images/loading2.gif" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="RequestReduceContent/11f16efd60f1b1f11ed1e174a8210d26-7cfc044d3b4fc81be1d89ebac1419c41.png" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="RequestReduceContent/73c05bb20f5d36141098ff2db55a94e9-5dfa73a38d0006d62061ee9747b25636-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="Images/bgButton.png" publishTime="06/05/2015 13:32:38" />
+    <file relUrl="InventoryTransferApproval.aspx" publishTime="06/19/2015 14:46:02" />
+    <file relUrl="ListOfMaterialRequest.aspx" publishTime="06/23/2015 13:08:30" />
+    <file relUrl="JQuery/jquery-ui.js" publishTime="06/05/2015 13:32:34" />
+    <file relUrl="Images/icon_plus.png" publishTime="06/05/2015 13:32:40" />
+    <file relUrl="bin/AE_HarrysWeb_V001.pdb" publishTime="05/23/2016 18:21:07" />
+    <file relUrl="GetImage.ashx" publishTime="06/05/2015 13:32:48" />
+    <file relUrl="Styles/menu_styles.css" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="StockCounting.aspx" publishTime="06/08/2015 15:08:48" />
+    <file relUrl="RequestReduceContent/39f47367467411419314f0628d56602d-2e7dea6e4bc5541aa8fa0132b0847b04-requestreducedscript.js" publishTime="06/05/2015 13:32:54" />
+    <file relUrl="Stored Procedure/Harrys.sql" publishTime="06/05/2015 13:32:56" />
+    <file relUrl="bin/AjaxControlToolkit.dll" publishTime="06/05/2015 13:32:52" />
+    <file relUrl="bin/AE_Harrys.DAL.dll" publishTime="05/23/2016 18:20:34" />
+    <file relUrl="StocktakeApproval.aspx" publishTime="08/04/2015 11:34:14" />
+    <file relUrl="OutletListPendingApproval.aspx" publishTime="06/10/2015 13:02:46" />
+    <file relUrl="bin/AE_Harrys.Common.pdb" publishTime="05/23/2016 18:20:36" />
+    <file relUrl="Images/Dark Green.png" publishTime="07/20/2015 14:50:52" />
+  </publishProfile>
+</publishData>

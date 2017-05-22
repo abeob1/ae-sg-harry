@@ -1,0 +1,547 @@
+[11/05/2016 3:37:56 p.m.][ReceiveInOutlet()] Starting Function 
+[11/05/2016 3:37:56 p.m.][ReceiveInOutlet()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Calling Get_Company_Details() 
+[11/05/2016 3:37:56 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:37:56 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:37:56 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:37:56 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:37:56 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:37:56 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:37:56 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:37:56 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:37:56 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:37:56 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:37:56 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:37:56 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Calling Filter Based on Company DB() 
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:37:56 p.m.][ConnectToTargetCompany()] Connecting the Database...
+[11/05/2016 3:38:26 p.m.][ConnectToTargetCompany()] Company Connection Established
+[11/05/2016 3:38:26 p.m.][ConnectToTargetCompany()] Completed With SUCCESS
+[11/05/2016 3:38:26 p.m.][ConnectToTargetCompany()] Completed With SUCCESS  
+[11/05/2016 3:38:26 p.m.][ReceiveInOutlet()] Calling ReceiveInOutlet() 
+[11/05/2016 3:38:27 p.m.][ReceiveInOutlet()] Starting Function
+[11/05/2016 3:38:27 p.m.][ReceiveInOutlet()] Calling ConvertPOToGRPO() Line Number : 
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] Starting Function
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] After object initialisation of SAP Documents
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] Checking Before the Content type/html issue 
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] Checking After the Content type/html issue 
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] After initialisation of Purchase delivery Note object 
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] 1
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10071'
+[11/05/2016 3:38:27 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:27 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:27 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN20001'
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10072'
+[11/05/2016 3:38:28 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:38:28 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:38:28 p.m.][ConvertPOToGRPO()] Before Adding GRPO 
+[11/05/2016 3:38:33 p.m.][ConvertPOToGRPO()] Completed with ERROR
+[11/05/2016 3:38:33 p.m.][ReceiveInOutlet()] Completed with ERROR
+[11/05/2016 3:38:33 p.m.][ReceiveInOutlet()] Completed With SUCCESS  
+[11/05/2016 3:39:28 p.m.][ReceiveInOutlet()] Starting Function 
+[11/05/2016 3:39:28 p.m.][ReceiveInOutlet()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Calling Get_Company_Details() 
+[11/05/2016 3:39:29 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:39:29 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:39:29 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:39:29 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:39:29 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:39:29 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:39:29 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:39:29 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:39:29 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:39:29 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:39:29 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:39:29 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Calling Filter Based on Company DB() 
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:39:29 p.m.][ConnectToTargetCompany()] Connecting the Database...
+[11/05/2016 3:40:13 p.m.][ConnectToTargetCompany()] Company Connection Established
+[11/05/2016 3:40:13 p.m.][ConnectToTargetCompany()] Completed With SUCCESS
+[11/05/2016 3:40:13 p.m.][ConnectToTargetCompany()] Completed With SUCCESS  
+[11/05/2016 3:40:29 p.m.][ReceiveInOutlet()] Calling ReceiveInOutlet() 
+[11/05/2016 3:40:38 p.m.][ReceiveInOutlet()] Starting Function
+[11/05/2016 3:40:43 p.m.][ReceiveInOutlet()] Calling ConvertPOToGRPO() Line Number : 
+[11/05/2016 3:40:48 p.m.][ConvertPOToGRPO()] Starting Function
+[11/05/2016 3:40:49 p.m.][ConvertPOToGRPO()] After object initialisation of SAP Documents
+[11/05/2016 3:40:49 p.m.][ConvertPOToGRPO()] Checking Before the Content type/html issue 
+[11/05/2016 3:40:50 p.m.][ConvertPOToGRPO()] Checking After the Content type/html issue 
+[11/05/2016 3:40:51 p.m.][ConvertPOToGRPO()] After initialisation of Purchase delivery Note object 
+[11/05/2016 3:40:53 p.m.][ConvertPOToGRPO()] 1
+[11/05/2016 3:40:58 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:40:58 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:40:58 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:40:58 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:40:58 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:40:58 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:00 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:41:01 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:41:01 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:41:01 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:41:01 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:41:01 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10071'
+[11/05/2016 3:41:02 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:41:02 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:06 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:41:09 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:41:09 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:41:09 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:41:09 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:41:09 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:41:09 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:10 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:41:10 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:41:10 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:41:10 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:41:10 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:41:10 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN20001'
+[11/05/2016 3:41:10 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:41:10 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:11 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:41:15 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:41:15 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:41:15 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:41:15 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:41:15 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:41:15 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:16 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:41:16 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:41:16 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:41:16 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:41:16 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:41:16 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10072'
+[11/05/2016 3:41:16 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:41:16 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:41:18 p.m.][ConvertPOToGRPO()] Before Adding GRPO 
+[11/05/2016 3:41:53 p.m.][ConvertPOToGRPO()] Completed with ERROR
+[11/05/2016 3:42:28 p.m.][ReceiveInOutlet()] Completed with ERROR
+[11/05/2016 3:42:28 p.m.][ReceiveInOutlet()] Completed With SUCCESS  
+[11/05/2016 3:52:10 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:52:10 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:52:10 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:52:10 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:52:10 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:52:10 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:52:10 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:52:10 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:10 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:52:11 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:11 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:52:11 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:52:15 p.m.][Login()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Login()] Calling Get_Company_Details() 
+[11/05/2016 3:52:15 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:52:15 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:52:15 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:52:15 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:52:15 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:15 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:52:15 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:52:15 p.m.][Login()] Calling Get_ConnectionString() 
+[11/05/2016 3:52:15 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 3:52:15 p.m.][Login()] Calling UserValidation() 
+[11/05/2016 3:52:15 p.m.][UserValidation()] Starting Function 
+[11/05/2016 3:52:15 p.m.][UserValidation()] Calling Run_QueryString()
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Query : select USER_CODE ,U_WebPassword  from OUSR with (nolock) where USER_CODE ='PR-P02'
+[11/05/2016 3:52:15 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:15 p.m.][UserValidation()] UserName :PR-P02Password :branson
+[11/05/2016 3:52:15 p.m.][UserValidation()] Completed With SUCCESS
+[11/05/2016 3:52:15 p.m.][Login()] Completed With SUCCESS  
+[11/05/2016 3:52:16 p.m.][Get_UserInformation()] Starting Function 
+[11/05/2016 3:52:16 p.m.][Get_UserInformation()] Calling Get_UserInformation() 
+[11/05/2016 3:52:16 p.m.][Get_UserInformation()] Starting Function 
+[11/05/2016 3:52:16 p.m.][Get_UserInformation()] Calling Run_QueryString()
+[11/05/2016 3:52:16 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:16 p.m.][Run_QueryString()] Query : EXEC AE_SP001_UserInformation 'PR-P02'
+[11/05/2016 3:52:19 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:19 p.m.][Get_UserInformation()] Completed With SUCCESS
+[11/05/2016 3:52:19 p.m.][Get_UserInformation()] Completed With SUCCESS  
+[11/05/2016 3:52:29 p.m.][Get_Outlet_Details()] Starting Function 
+[11/05/2016 3:52:29 p.m.][Get_Outlet_Details()] Calling Get_Outlets() 
+[11/05/2016 3:52:29 p.m.][Get_Outlets()] Starting Function 
+[11/05/2016 3:52:29 p.m.][Get_Outlets()] Calling Run_StoredProcedure 
+[11/05/2016 3:52:29 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 3:52:29 p.m.][Run_StoredProcedure()] Query : exec AE_SP001_GetOutlets
+[11/05/2016 3:52:29 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 3:52:29 p.m.][Get_Outlets()] Completed With SUCCESS 
+[11/05/2016 3:52:29 p.m.][Get_Outlet_Details()] Completed With SUCCESS  
+[11/05/2016 3:52:36 p.m.][Get_InventoryRequestDetails()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Get_InventoryRequestDetails()] Calling Get_Company_Details() 
+[11/05/2016 3:52:36 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:52:36 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:52:36 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:52:36 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:52:36 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:52:36 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:52:36 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:36 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:52:36 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:52:36 p.m.][Get_InventoryRequestDetails()] Calling Get_ConnectionString() 
+[11/05/2016 3:52:36 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 3:52:36 p.m.][Get_InventoryRequestDetails()] Calling Get_OpenPOList() 
+[11/05/2016 3:52:36 p.m.][Get_OpenPOList()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Get_OpenPOList()] Calling Run_StoredProcedure() 
+[11/05/2016 3:52:36 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 3:52:36 p.m.][Run_StoredProcedure()] Query : EXEC [AE_SP013_GetPOList] '%','E','Bar','11APK'
+[11/05/2016 3:52:48 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 3:52:48 p.m.][Get_OpenPOList()] Completed With SUCCESS  
+[11/05/2016 3:52:48 p.m.][Get_InventoryRequestDetails()] Completed With SUCCESS  
+[11/05/2016 3:52:57 p.m.][Get_ReceiveInOutlet_Details()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_Company_Details() 
+[11/05/2016 3:52:57 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:52:57 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:52:57 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:52:57 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:52:57 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:52:57 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:52:57 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:52:57 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:52:57 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:52:57 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_ConnectionString() 
+[11/05/2016 3:52:57 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 3:52:57 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_OpenPOListDetails() 
+[11/05/2016 3:52:57 p.m.][Get_OpenPOListDetails()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Get_OpenPOListDetails()] Calling Run_StoredProcedure() 
+[11/05/2016 3:52:57 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 3:52:57 p.m.][Run_StoredProcedure()] Query : EXEC [AE_SP014_Get_POListDetails] '11APK','Bar','CULINA PTE LTD'
+[11/05/2016 3:53:01 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 3:53:01 p.m.][Get_OpenPOListDetails()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_ReceiveInOutlet_Details()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Calling Get_Company_Details() 
+[11/05/2016 3:53:01 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:53:01 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:53:01 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:53:01 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:53:01 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:53:01 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:01 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:53:01 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Calling Get_ConnectionString() 
+[11/05/2016 3:53:01 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Calling Get_ReasonDetails() 
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Calling Run_StoredProcedure() 
+[11/05/2016 3:53:01 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 3:53:01 p.m.][Run_StoredProcedure()] Query : EXEC AE_SP017_GetReasonDetails  
+[11/05/2016 3:53:01 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Completed With SUCCESS  
+[11/05/2016 3:53:01 p.m.][Get_ReasonDetails()] Completed With SUCCESS  
+[11/05/2016 3:53:19 p.m.][ReceiveInOutlet()] Starting Function 
+[11/05/2016 3:53:19 p.m.][ReceiveInOutlet()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Calling Get_Company_Details() 
+[11/05/2016 3:53:19 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 3:53:19 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 3:53:19 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 3:53:19 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 3:53:19 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 3:53:19 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 3:53:19 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 3:53:19 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:19 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 3:53:19 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:19 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 3:53:19 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Calling Filter Based on Company DB() 
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Calling ConnectToTargetCompany() 
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 3:53:19 p.m.][ConnectToTargetCompany()] Connecting the Database...
+[11/05/2016 3:53:34 p.m.][ConnectToTargetCompany()] Company Connection Established
+[11/05/2016 3:53:34 p.m.][ConnectToTargetCompany()] Completed With SUCCESS
+[11/05/2016 3:53:34 p.m.][ConnectToTargetCompany()] Completed With SUCCESS  
+[11/05/2016 3:53:34 p.m.][ReceiveInOutlet()] Calling ReceiveInOutlet() 
+[11/05/2016 3:53:34 p.m.][ReceiveInOutlet()] Starting Function
+[11/05/2016 3:53:42 p.m.][ReceiveInOutlet()] Calling ConvertPOToGRPO() Line Number : 
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] Starting Function
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] After object initialisation of SAP Documents
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] Checking Before the Content type/html issue 
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] Checking After the Content type/html issue 
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] After initialisation of Purchase delivery Note object 
+[11/05/2016 3:53:44 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10071'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN20001'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10072'
+[11/05/2016 3:53:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 3:53:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 3:53:45 p.m.][ConvertPOToGRPO()] Before Adding GRPO 
+[11/05/2016 3:53:47 p.m.][ConvertPOToGRPO()] Completed with ERROR
+[11/05/2016 3:53:59 p.m.][ReceiveInOutlet()] Completed with ERROR
+[11/05/2016 3:54:07 p.m.][ReceiveInOutlet()] Completed With SUCCESS  
+[11/05/2016 4:04:22 p.m.][Get_Outlet_Details()] Starting Function 
+[11/05/2016 4:04:22 p.m.][Get_Outlet_Details()] Calling Get_Outlets() 
+[11/05/2016 4:04:22 p.m.][Get_Outlets()] Starting Function 
+[11/05/2016 4:04:22 p.m.][Get_Outlets()] Calling Run_StoredProcedure 
+[11/05/2016 4:04:22 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 4:04:22 p.m.][Run_StoredProcedure()] Query : exec AE_SP001_GetOutlets
+[11/05/2016 4:04:23 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 4:04:23 p.m.][Get_Outlets()] Completed With SUCCESS 
+[11/05/2016 4:04:23 p.m.][Get_Outlet_Details()] Completed With SUCCESS  
+[11/05/2016 4:04:30 p.m.][Get_InventoryRequestDetails()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Get_InventoryRequestDetails()] Calling Get_Company_Details() 
+[11/05/2016 4:04:30 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 4:04:30 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 4:04:30 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 4:04:30 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 4:04:30 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 4:04:30 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 4:04:30 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:04:30 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 4:04:30 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 4:04:30 p.m.][Get_InventoryRequestDetails()] Calling Get_ConnectionString() 
+[11/05/2016 4:04:30 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 4:04:30 p.m.][Get_InventoryRequestDetails()] Calling Get_OpenPOList() 
+[11/05/2016 4:04:30 p.m.][Get_OpenPOList()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Get_OpenPOList()] Calling Run_StoredProcedure() 
+[11/05/2016 4:04:30 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 4:04:30 p.m.][Run_StoredProcedure()] Query : EXEC [AE_SP013_GetPOList] '%','E','Bar','11APK'
+[11/05/2016 4:04:45 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 4:04:45 p.m.][Get_OpenPOList()] Completed With SUCCESS  
+[11/05/2016 4:04:45 p.m.][Get_InventoryRequestDetails()] Completed With SUCCESS  
+[11/05/2016 4:04:52 p.m.][Get_ReceiveInOutlet_Details()] Starting Function 
+[11/05/2016 4:04:52 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_Company_Details() 
+[11/05/2016 4:04:52 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 4:04:52 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 4:04:52 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 4:04:52 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 4:04:52 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 4:04:52 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 4:04:52 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 4:04:52 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:04:52 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 4:04:53 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:04:53 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 4:04:53 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 4:04:53 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_ConnectionString() 
+[11/05/2016 4:04:53 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 4:04:53 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 4:04:53 p.m.][Get_ReceiveInOutlet_Details()] Calling Get_OpenPOListDetails() 
+[11/05/2016 4:04:53 p.m.][Get_OpenPOListDetails()] Starting Function 
+[11/05/2016 4:04:53 p.m.][Get_OpenPOListDetails()] Calling Run_StoredProcedure() 
+[11/05/2016 4:04:53 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 4:04:53 p.m.][Run_StoredProcedure()] Query : EXEC [AE_SP014_Get_POListDetails] '11APK','Bar','CULINA PTE LTD'
+[11/05/2016 4:05:07 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 4:05:07 p.m.][Get_OpenPOListDetails()] Completed With SUCCESS  
+[11/05/2016 4:05:07 p.m.][Get_ReceiveInOutlet_Details()] Completed With SUCCESS  
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Calling Get_Company_Details() 
+[11/05/2016 4:05:08 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 4:05:08 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 4:05:08 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 4:05:08 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 4:05:08 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 4:05:08 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 4:05:08 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:05:08 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 4:05:08 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Calling Get_ConnectionString() 
+[11/05/2016 4:05:08 p.m.][Get_ConnectionString()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Get_ConnectionString()] Completed With SUCCESS  
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Calling Get_ReasonDetails() 
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Calling Run_StoredProcedure() 
+[11/05/2016 4:05:08 p.m.][Run_StoredProcedure()] Starting Function 
+[11/05/2016 4:05:08 p.m.][Run_StoredProcedure()] Query : EXEC AE_SP017_GetReasonDetails  
+[11/05/2016 4:05:08 p.m.][Run_StoredProcedure()] Completed With SUCCESS 
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Completed With SUCCESS  
+[11/05/2016 4:05:08 p.m.][Get_ReasonDetails()] Completed With SUCCESS  
+[11/05/2016 4:05:21 p.m.][ReceiveInOutlet()] Starting Function 
+[11/05/2016 4:05:21 p.m.][ReceiveInOutlet()] Calling ConnectToTargetCompany() 
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Calling Get_Company_Details() 
+[11/05/2016 4:05:21 p.m.][Get_Company_Details()] Starting Function 
+[11/05/2016 4:05:21 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[11/05/2016 4:05:21 p.m.][UpdateDOStatus()] Starting Function 
+[11/05/2016 4:05:21 p.m.][UpdateDOStatus()] Completed With SUCCESS  
+[11/05/2016 4:05:21 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[11/05/2016 4:05:21 p.m.][Get_CompanyList()] Starting Function 
+[11/05/2016 4:05:21 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[11/05/2016 4:05:21 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:05:21 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[11/05/2016 4:05:21 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:05:21 p.m.][Get_CompanyList()] Completed With SUCCESS 
+[11/05/2016 4:05:21 p.m.][Get_Company_Details()] Completed With SUCCESS  
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Calling Filter Based on Company DB() 
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Calling ConnectToTargetCompany() 
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Starting Function 
+[11/05/2016 4:05:21 p.m.][ConnectToTargetCompany()] Connecting the Database...
+[11/05/2016 4:06:32 p.m.][ConnectToTargetCompany()] Company Connection Established
+[11/05/2016 4:06:32 p.m.][ConnectToTargetCompany()] Completed With SUCCESS
+[11/05/2016 4:06:32 p.m.][ConnectToTargetCompany()] Completed With SUCCESS  
+[11/05/2016 4:06:32 p.m.][ReceiveInOutlet()] Calling ReceiveInOutlet() 
+[11/05/2016 4:06:32 p.m.][ReceiveInOutlet()] Starting Function
+[11/05/2016 4:06:36 p.m.][ReceiveInOutlet()] Calling ConvertPOToGRPO() Line Number : 
+[11/05/2016 4:06:40 p.m.][ConvertPOToGRPO()] Starting Function
+[11/05/2016 4:06:41 p.m.][ConvertPOToGRPO()] After object initialisation of SAP Documents
+[11/05/2016 4:06:41 p.m.][ConvertPOToGRPO()] Checking Before the Content type/html issue 
+[11/05/2016 4:06:41 p.m.][ConvertPOToGRPO()] Checking After the Content type/html issue 
+[11/05/2016 4:06:41 p.m.][ConvertPOToGRPO()] After initialisation of Purchase delivery Note object 
+[11/05/2016 4:06:42 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 4:06:44 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:44 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:44 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:44 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 4:06:44 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:44 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:45 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 4:06:45 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 4:06:45 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:45 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:45 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:45 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10072'
+[11/05/2016 4:06:45 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:45 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:47 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 4:06:49 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:49 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:49 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:49 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 4:06:49 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:49 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:50 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 4:06:50 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 4:06:50 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:50 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:50 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:50 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN10071'
+[11/05/2016 4:06:50 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:50 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:50 p.m.][ConvertPOToGRPO()] 3.00
+[11/05/2016 4:06:52 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:52 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:52 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:52 p.m.][Run_QueryString()] Query : select U_CostCenter [CostCenter] from OWHS with (NOLOCK) where WhsCode ='11APK'
+[11/05/2016 4:06:52 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:52 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:53 p.m.][ConvertPOToGRPO()] After getting & assigning the costing code from warehouse master : 11APK
+[11/05/2016 4:06:53 p.m.][ConvertPOToGRPO()] Calling GetSingleValue() for Checking Batch Item
+[11/05/2016 4:06:53 p.m.][Get_SingleValue()] Starting Function 
+[11/05/2016 4:06:53 p.m.][Get_SingleValue()] Calling Run_QueryString() 
+[11/05/2016 4:06:53 p.m.][Run_QueryString()] Starting Function 
+[11/05/2016 4:06:53 p.m.][Run_QueryString()] Query : select ManBtchNum  from OITM with(nolock) where ItemCode='BVWN20001'
+[11/05/2016 4:06:53 p.m.][Run_QueryString()] Completed With SUCCESS 
+[11/05/2016 4:06:53 p.m.][Get_SingleValue()] Completed With SUCCESS  
+[11/05/2016 4:06:54 p.m.][ConvertPOToGRPO()] Before Adding GRPO 
+[11/05/2016 4:07:34 p.m.][ConvertPOToGRPO()] Calling CloseLineStatus() for closing the PO. Ref Number : 33349
+[11/05/2016 4:07:34 p.m.][CloseLineStatus()] Starting Function
+[11/05/2016 4:07:34 p.m.][CloseLineStatus()] PO 
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] DocEntry : 33349
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] PO Line Count  : 3
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] PO Line : 0
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] Quantity Checking : Remaining OpenQty : 0  Reaining Inv Qty : 0
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] PO Line : 1
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] Quantity Checking : Remaining OpenQty : 0  Reaining Inv Qty : 0
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] PO Line : 2
+[11/05/2016 4:07:40 p.m.][CloseLineStatus()] Quantity Checking : Remaining OpenQty : 0  Reaining Inv Qty : 0
+[11/05/2016 4:08:08 p.m.][CloseLineStatus()] Completed with SUCCESS 
+[11/05/2016 4:08:14 p.m.][ConvertPOToGRPO()] Completed with SUCCESS 
+[11/05/2016 4:08:20 p.m.][ReceiveInOutlet()] Completed With SUCCESS
+[11/05/2016 4:08:27 p.m.][ReceiveInOutlet()] Completed With SUCCESS  

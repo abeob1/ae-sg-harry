@@ -1,0 +1,4 @@
+E:\SVN Work area\Harrys application\Source\AE_Harrys.Common\bin\Release\AE_Harrys.Common.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.Common\bin\Release\AE_Harrys.Common.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.Common\obj\Release\AE_Harrys.Common.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.Common\obj\Release\AE_Harrys.Common.pdb

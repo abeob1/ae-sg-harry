@@ -1,0 +1,123 @@
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\SVN Work area\Harrys application\Source\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\SVN Work Area\Harrys Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb

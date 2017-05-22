@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MGet_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_UserAcknowledgement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_UserAcknowledgementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_UserAcknowledgementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_OutletList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_OutletListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_OutletListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_CompanyList">
+        <s:complexType />
+      </s:element>
+      <s:element name="MGet_CompanyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_CompanyListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_InventoryRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_InventoryRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_InventoryRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_InventoryRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRequestNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_InventoryRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_InventoryRequestDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_OpenPOList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplierType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAccessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_OpenPOListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_OpenPOListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInOutlet_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAccessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInOutlet_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_ReceiveInOutlet_DetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReasonCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReasonCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_ReasonCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInOutlet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sJSONFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInOutletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_ReceiveInOutletResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInVAN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sJSONFile" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MGet_ReceiveInVANResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MGet_ReceiveInVANResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MGet_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_Login" />
+  </wsdl:message>
+  <wsdl:message name="MGet_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_UserAcknowledgementSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_UserAcknowledgement" />
+  </wsdl:message>
+  <wsdl:message name="MGet_UserAcknowledgementSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_UserAcknowledgementResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_OutletListSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_OutletList" />
+  </wsdl:message>
+  <wsdl:message name="MGet_OutletListSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_OutletListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_CompanyListSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_CompanyList" />
+  </wsdl:message>
+  <wsdl:message name="MGet_CompanyListSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_CompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_InventoryRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_InventoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="MGet_InventoryRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_InventoryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_InventoryRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_InventoryRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="MGet_InventoryRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_InventoryRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_OpenPOListSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_OpenPOList" />
+  </wsdl:message>
+  <wsdl:message name="MGet_OpenPOListSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_OpenPOListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInOutlet_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInOutlet_Details" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInOutlet_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInOutlet_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReasonCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_ReasonCode" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReasonCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_ReasonCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInOutletSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInOutlet" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInOutletSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInVANSoapIn">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInVAN" />
+  </wsdl:message>
+  <wsdl:message name="MGet_ReceiveInVANSoapOut">
+    <wsdl:part name="parameters" element="tns:MGet_ReceiveInVANResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MobileSoap">
+    <wsdl:operation name="MGet_Login">
+      <wsdl:input message="tns:MGet_LoginSoapIn" />
+      <wsdl:output message="tns:MGet_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_UserAcknowledgement">
+      <wsdl:input message="tns:MGet_UserAcknowledgementSoapIn" />
+      <wsdl:output message="tns:MGet_UserAcknowledgementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OutletList">
+      <wsdl:input message="tns:MGet_OutletListSoapIn" />
+      <wsdl:output message="tns:MGet_OutletListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_CompanyList">
+      <wsdl:input message="tns:MGet_CompanyListSoapIn" />
+      <wsdl:output message="tns:MGet_CompanyListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequest">
+      <wsdl:input message="tns:MGet_InventoryRequestSoapIn" />
+      <wsdl:output message="tns:MGet_InventoryRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequestDetails">
+      <wsdl:input message="tns:MGet_InventoryRequestDetailsSoapIn" />
+      <wsdl:output message="tns:MGet_InventoryRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OpenPOList">
+      <wsdl:input message="tns:MGet_OpenPOListSoapIn" />
+      <wsdl:output message="tns:MGet_OpenPOListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet_Details">
+      <wsdl:input message="tns:MGet_ReceiveInOutlet_DetailsSoapIn" />
+      <wsdl:output message="tns:MGet_ReceiveInOutlet_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReasonCode">
+      <wsdl:input message="tns:MGet_ReasonCodeSoapIn" />
+      <wsdl:output message="tns:MGet_ReasonCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet">
+      <wsdl:input message="tns:MGet_ReceiveInOutletSoapIn" />
+      <wsdl:output message="tns:MGet_ReceiveInOutletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInVAN">
+      <wsdl:input message="tns:MGet_ReceiveInVANSoapIn" />
+      <wsdl:output message="tns:MGet_ReceiveInVANSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileSoap" type="tns:MobileSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MGet_Login">
+      <soap:operation soapAction="http://tempuri.org/MGet_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_UserAcknowledgement">
+      <soap:operation soapAction="http://tempuri.org/MGet_UserAcknowledgement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OutletList">
+      <soap:operation soapAction="http://tempuri.org/MGet_OutletList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_CompanyList">
+      <soap:operation soapAction="http://tempuri.org/MGet_CompanyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequest">
+      <soap:operation soapAction="http://tempuri.org/MGet_InventoryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequestDetails">
+      <soap:operation soapAction="http://tempuri.org/MGet_InventoryRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OpenPOList">
+      <soap:operation soapAction="http://tempuri.org/MGet_OpenPOList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet_Details">
+      <soap:operation soapAction="http://tempuri.org/MGet_ReceiveInOutlet_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReasonCode">
+      <soap:operation soapAction="http://tempuri.org/MGet_ReasonCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet">
+      <soap:operation soapAction="http://tempuri.org/MGet_ReceiveInOutlet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInVAN">
+      <soap:operation soapAction="http://tempuri.org/MGet_ReceiveInVAN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileSoap12" type="tns:MobileSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MGet_Login">
+      <soap12:operation soapAction="http://tempuri.org/MGet_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_UserAcknowledgement">
+      <soap12:operation soapAction="http://tempuri.org/MGet_UserAcknowledgement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OutletList">
+      <soap12:operation soapAction="http://tempuri.org/MGet_OutletList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_CompanyList">
+      <soap12:operation soapAction="http://tempuri.org/MGet_CompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequest">
+      <soap12:operation soapAction="http://tempuri.org/MGet_InventoryRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_InventoryRequestDetails">
+      <soap12:operation soapAction="http://tempuri.org/MGet_InventoryRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_OpenPOList">
+      <soap12:operation soapAction="http://tempuri.org/MGet_OpenPOList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet_Details">
+      <soap12:operation soapAction="http://tempuri.org/MGet_ReceiveInOutlet_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReasonCode">
+      <soap12:operation soapAction="http://tempuri.org/MGet_ReasonCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInOutlet">
+      <soap12:operation soapAction="http://tempuri.org/MGet_ReceiveInOutlet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MGet_ReceiveInVAN">
+      <soap12:operation soapAction="http://tempuri.org/MGet_ReceiveInVAN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Mobile">
+    <wsdl:port name="MobileSoap" binding="tns:MobileSoap">
+      <soap:address location="http://localhost:35511/Mobile.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobileSoap12" binding="tns:MobileSoap12">
+      <soap12:address location="http://localhost:35511/Mobile.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

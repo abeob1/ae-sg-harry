@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_UserInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Outlet_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSuperUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutletCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iApprovalLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Outlet_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Outlet_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Supplier_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Supplier_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Supplier_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Company_Details">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_Company_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Company_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqBySupplierResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqByItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGroupType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqByItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqByItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Drafts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DraftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_DraftsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqDraft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqDraftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqDraftResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReq_Submitted_Approval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReq_Submitted_ApprovalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReq_Submitted_ApprovalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_DraftDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_DraftDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_DraftDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MRSubmit_ApprovedDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MRSubmit_ApprovedDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MRSubmit_ApprovedDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierItemList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierItemListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqBySupplierItemListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_UserInformation" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_UserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Outlet_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Outlet_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Outlet_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Outlet_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Supplier_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Supplier_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Supplier_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Supplier_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Company_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Company_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Company_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Company_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplier" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqByItemSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqByItem" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqByItemSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqByItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="Create_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Create_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DraftsSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Drafts" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DraftsSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_DraftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqDraftSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqDraft" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqDraftSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReq_Submitted_ApprovalSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReq_Submitted_Approval" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReq_Submitted_ApprovalSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReq_Submitted_ApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_DraftDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_DraftDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_DraftDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_DraftDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MRSubmit_ApprovedDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MRSubmit_ApprovedDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_MRSubmit_ApprovedDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MRSubmit_ApprovedDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierItemListSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierItemList" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierItemListSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierItemListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MasterSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <wsdl:input message="tns:Get_UserInformationSoapIn" />
+      <wsdl:output message="tns:Get_UserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <wsdl:input message="tns:Get_Outlet_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Outlet_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <wsdl:input message="tns:Get_Supplier_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Supplier_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <wsdl:input message="tns:Get_Company_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Company_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <wsdl:input message="tns:Get_MaterialReqBySupplierSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqBySupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <wsdl:input message="tns:Get_MaterialReqByItemSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqByItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <wsdl:input message="tns:Create_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Create_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <wsdl:input message="tns:Delete_DraftsSoapIn" />
+      <wsdl:output message="tns:Delete_DraftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <wsdl:input message="tns:Get_MaterialReqDraftSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqDraftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <wsdl:input message="tns:Get_MaterialReq_Submitted_ApprovalSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReq_Submitted_ApprovalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <wsdl:input message="tns:Get_DraftDetailsSoapIn" />
+      <wsdl:output message="tns:Get_DraftDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <wsdl:input message="tns:Get_MRSubmit_ApprovedDetailsSoapIn" />
+      <wsdl:output message="tns:Get_MRSubmit_ApprovedDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <wsdl:input message="tns:Get_MaterialReqBySupplierItemListSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqBySupplierItemListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MasterSoap" type="tns:MasterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <soap:operation soapAction="http://tempuri.org/Get_UserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Outlet_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Supplier_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Company_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqByItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Create_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <soap:operation soapAction="http://tempuri.org/Delete_Drafts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReq_Submitted_Approval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_DraftDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_MRSubmit_ApprovedDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplierItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MasterSoap12" type="tns:MasterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <soap12:operation soapAction="http://tempuri.org/Get_UserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Outlet_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Supplier_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Company_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqByItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Create_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <soap12:operation soapAction="http://tempuri.org/Delete_Drafts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqDraft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReq_Submitted_Approval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_DraftDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_MRSubmit_ApprovedDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplierItemList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Master">
+    <wsdl:port name="MasterSoap" binding="tns:MasterSoap">
+      <soap:address location="http://localhost:35511/Master.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MasterSoap12" binding="tns:MasterSoap12">
+      <soap12:address location="http://localhost:35511/Master.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

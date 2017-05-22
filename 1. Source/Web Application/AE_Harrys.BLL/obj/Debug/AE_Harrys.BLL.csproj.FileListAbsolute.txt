@@ -1,0 +1,120 @@
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+F:\Application\SAP B1\Projects\Harrys\Web Order\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+F:\SVN WorkArea\Harrys\Harrys Web Application\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+F:\SVN WorkArea\Harrys\Sources\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\Abeo-Projects\Github\Harrys\1. Source\Harrys Web Application_PhaseII\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+F:\Projects\Harrys\LatestSource_Mar14th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+F:\Projects\Harrys\May11th2016\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\Abeo-Projects\Abeo_Projects_WorkArea\HARRYS\1. Source\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.BLL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.Common.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\AE_Harrys.DAL.pdb
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\bin\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csprojResolveAssemblyReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.csproj.ResolveComReference.cache
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.dll
+E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.BLL\obj\Debug\AE_Harrys.BLL.pdb

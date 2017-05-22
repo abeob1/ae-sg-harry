@@ -1,0 +1,2329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Create_InventoryTransferRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oDSInvReqData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_InventoryTransferRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_InventoryTransferRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenTransferRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenTransferRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_OpenTransferRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenTransferRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenTransferRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_OpenTransferRequestDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OutletListPR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGroupType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OutletListPRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_OutletListPRResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Approve_InventoryTransferRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oDSInvTransData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Approve_InventoryTransferRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Approve_InventoryTransferRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reject_InventoryTransferRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oDSInvTransData">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reject_InventoryTransferRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Reject_InventoryTransferRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryTransferRequest_ItemSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFromOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGroupType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryTransferRequest_ItemSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_InventoryTransferRequest_ItemSearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAdd" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsSubmit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsDelCharge" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insert_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAdd" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsSubmit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsDelCharge" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Submit_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Submit_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Submit_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Approve_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Approve_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Approve_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ApprovalStatus_Summary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ApprovalStatus_SummaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ApprovalStatus_SummaryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLicServerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDBPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_UserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_UserInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Outlet_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSuperUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutletCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iApprovalLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Outlet_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Outlet_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Supplier_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Supplier_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Supplier_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Company_Details">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_Company_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_Company_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqBySupplierResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqByItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sGroupType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqByItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqByItemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_PurchaseRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="IsDraft" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsAdd" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsSubmit" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsDelCharge" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_PurchaseRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_PurchaseRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_Drafts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DraftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Delete_DraftsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PRDraft_Submit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PRDraft_SubmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PRDraft_SubmitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqDraft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqDraftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqDraftResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReq_Submitted_Approval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iStatus" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="todate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReq_Submitted_ApprovalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReq_Submitted_ApprovalResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_DraftDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_DraftDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_DraftDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MRSubmit_ApprovedDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MRSubmit_ApprovedDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MRSubmit_ApprovedDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierItemList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sConnString" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_MaterialReqBySupplierItemListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_MaterialReqBySupplierItemListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ItemList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ItemListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ItemListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ReasonDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ReasonDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ReasonDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertDraftToDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConvertDraftToDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConvertDraftToDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_InventoryRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryRequestDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRequestNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InventoryRequestDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_InventoryRequestDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenPOList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplierType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAccessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutletCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_OpenPOListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_OpenPOListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ReceiveInOutlet_Details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAccessType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSupplier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_ReceiveInOutlet_DetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_ReceiveInOutlet_DetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_GetPendingDrafts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sApprLevel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_GetPendingDraftsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_GetPendingDraftsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ApprovalStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ApprovalStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_ApprovalStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveInOutlet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReceiveInOutletResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReceiveInOutletResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_SalesTakingCountList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_SalesTakingCountListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_SalesTakingCountListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_StockTakeCounting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_StockTakeCountingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_StockTakeCountingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StockTakeApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StockTakeApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StockTakeApproveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_StockTakeCountingDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRequester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_StockTakeCountingDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_StockTakeCountingDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_StockTakeCounting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocEntry" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRequester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Create_StockTakeCountingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Create_StockTakeCountingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_StockTakeApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsApprove" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDocOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRequester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOutlet" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_StockTakeApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Update_StockTakeApproveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDOStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDataset">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="sCompanyDB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUserRole" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIsApprove" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDOStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDOStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Create_InventoryTransferRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_InventoryTransferRequest" />
+  </wsdl:message>
+  <wsdl:message name="Create_InventoryTransferRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_InventoryTransferRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenTransferRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_OpenTransferRequest" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenTransferRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_OpenTransferRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenTransferRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_OpenTransferRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenTransferRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_OpenTransferRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_OutletListPRSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_OutletListPR" />
+  </wsdl:message>
+  <wsdl:message name="Get_OutletListPRSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_OutletListPRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Approve_InventoryTransferRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Approve_InventoryTransferRequest" />
+  </wsdl:message>
+  <wsdl:message name="Approve_InventoryTransferRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Approve_InventoryTransferRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Reject_InventoryTransferRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Reject_InventoryTransferRequest" />
+  </wsdl:message>
+  <wsdl:message name="Reject_InventoryTransferRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Reject_InventoryTransferRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryTransferRequest_ItemSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_InventoryTransferRequest_ItemSearch" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryTransferRequest_ItemSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_InventoryTransferRequest_ItemSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Insert_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Update_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Submit_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Submit_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Submit_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Submit_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Approve_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Approve_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Approve_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Approve_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Delete_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ApprovalStatus_SummarySoapIn">
+    <wsdl:part name="parameters" element="tns:Get_ApprovalStatus_Summary" />
+  </wsdl:message>
+  <wsdl:message name="Get_ApprovalStatus_SummarySoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ApprovalStatus_SummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_UserInformation" />
+  </wsdl:message>
+  <wsdl:message name="Get_UserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_UserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Outlet_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Outlet_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Outlet_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Outlet_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Supplier_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Supplier_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Supplier_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Supplier_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Company_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Company_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_Company_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Company_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplier" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqByItemSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqByItem" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqByItemSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqByItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="Create_PurchaseRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_PurchaseRequest" />
+  </wsdl:message>
+  <wsdl:message name="Create_PurchaseRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_PurchaseRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DraftsSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_Drafts" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DraftsSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_DraftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PRDraft_SubmitSoapIn">
+    <wsdl:part name="parameters" element="tns:PRDraft_Submit" />
+  </wsdl:message>
+  <wsdl:message name="PRDraft_SubmitSoapOut">
+    <wsdl:part name="parameters" element="tns:PRDraft_SubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqDraftSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqDraft" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqDraftSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqDraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReq_Submitted_ApprovalSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReq_Submitted_Approval" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReq_Submitted_ApprovalSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReq_Submitted_ApprovalResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_DraftDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_DraftDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_DraftDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_DraftDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MRSubmit_ApprovedDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MRSubmit_ApprovedDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_MRSubmit_ApprovedDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MRSubmit_ApprovedDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierItemListSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierItemList" />
+  </wsdl:message>
+  <wsdl:message name="Get_MaterialReqBySupplierItemListSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_MaterialReqBySupplierItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ItemListSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_ItemList" />
+  </wsdl:message>
+  <wsdl:message name="Get_ItemListSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ItemListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ReasonDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_ReasonDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_ReasonDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ReasonDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConvertDraftToDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:ConvertDraftToDocument" />
+  </wsdl:message>
+  <wsdl:message name="ConvertDraftToDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:ConvertDraftToDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_InventoryRequest" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_InventoryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryRequestDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_InventoryRequestDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_InventoryRequestDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_InventoryRequestDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenPOListSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_OpenPOList" />
+  </wsdl:message>
+  <wsdl:message name="Get_OpenPOListSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_OpenPOListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_ReceiveInOutlet_DetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_ReceiveInOutlet_Details" />
+  </wsdl:message>
+  <wsdl:message name="Get_ReceiveInOutlet_DetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_ReceiveInOutlet_DetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_GetPendingDraftsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_GetPendingDrafts" />
+  </wsdl:message>
+  <wsdl:message name="Get_GetPendingDraftsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_GetPendingDraftsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ApprovalStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_ApprovalStatus" />
+  </wsdl:message>
+  <wsdl:message name="Update_ApprovalStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ApprovalStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveInOutletSoapIn">
+    <wsdl:part name="parameters" element="tns:ReceiveInOutlet" />
+  </wsdl:message>
+  <wsdl:message name="ReceiveInOutletSoapOut">
+    <wsdl:part name="parameters" element="tns:ReceiveInOutletResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_SalesTakingCountListSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_SalesTakingCountList" />
+  </wsdl:message>
+  <wsdl:message name="Get_SalesTakingCountListSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_SalesTakingCountListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_StockTakeCountingSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_StockTakeCounting" />
+  </wsdl:message>
+  <wsdl:message name="Get_StockTakeCountingSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_StockTakeCountingResponse" />
+  </wsdl:message>
+  <wsdl:message name="StockTakeApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:StockTakeApprove" />
+  </wsdl:message>
+  <wsdl:message name="StockTakeApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:StockTakeApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_StockTakeCountingDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_StockTakeCountingDetails" />
+  </wsdl:message>
+  <wsdl:message name="Get_StockTakeCountingDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_StockTakeCountingDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Create_StockTakeCountingSoapIn">
+    <wsdl:part name="parameters" element="tns:Create_StockTakeCounting" />
+  </wsdl:message>
+  <wsdl:message name="Create_StockTakeCountingSoapOut">
+    <wsdl:part name="parameters" element="tns:Create_StockTakeCountingResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_StockTakeApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_StockTakeApprove" />
+  </wsdl:message>
+  <wsdl:message name="Update_StockTakeApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_StockTakeApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDOStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDOStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDOStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDOStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MasterSoap">
+    <wsdl:operation name="Create_InventoryTransferRequest">
+      <wsdl:input message="tns:Create_InventoryTransferRequestSoapIn" />
+      <wsdl:output message="tns:Create_InventoryTransferRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequest">
+      <wsdl:input message="tns:Get_OpenTransferRequestSoapIn" />
+      <wsdl:output message="tns:Get_OpenTransferRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequestDetails">
+      <wsdl:input message="tns:Get_OpenTransferRequestDetailsSoapIn" />
+      <wsdl:output message="tns:Get_OpenTransferRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_OutletListPR">
+      <wsdl:input message="tns:Get_OutletListPRSoapIn" />
+      <wsdl:output message="tns:Get_OutletListPRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Approve_InventoryTransferRequest">
+      <wsdl:input message="tns:Approve_InventoryTransferRequestSoapIn" />
+      <wsdl:output message="tns:Approve_InventoryTransferRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reject_InventoryTransferRequest">
+      <wsdl:input message="tns:Reject_InventoryTransferRequestSoapIn" />
+      <wsdl:output message="tns:Reject_InventoryTransferRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryTransferRequest_ItemSearch">
+      <wsdl:input message="tns:Get_InventoryTransferRequest_ItemSearchSoapIn" />
+      <wsdl:output message="tns:Get_InventoryTransferRequest_ItemSearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_PurchaseRequest">
+      <wsdl:input message="tns:Insert_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Insert_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_PurchaseRequest">
+      <wsdl:input message="tns:Update_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Update_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Submit_PurchaseRequest">
+      <wsdl:input message="tns:Submit_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Submit_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Approve_PurchaseRequest">
+      <wsdl:input message="tns:Approve_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Approve_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PurchaseRequest">
+      <wsdl:input message="tns:Delete_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Delete_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ApprovalStatus_Summary">
+      <wsdl:input message="tns:Get_ApprovalStatus_SummarySoapIn" />
+      <wsdl:output message="tns:Get_ApprovalStatus_SummarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <wsdl:input message="tns:Get_UserInformationSoapIn" />
+      <wsdl:output message="tns:Get_UserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <wsdl:input message="tns:Get_Outlet_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Outlet_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <wsdl:input message="tns:Get_Supplier_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Supplier_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <wsdl:input message="tns:Get_Company_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_Company_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <wsdl:input message="tns:Get_MaterialReqBySupplierSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqBySupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <wsdl:input message="tns:Get_MaterialReqByItemSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqByItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <wsdl:input message="tns:Create_PurchaseRequestSoapIn" />
+      <wsdl:output message="tns:Create_PurchaseRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <wsdl:input message="tns:Delete_DraftsSoapIn" />
+      <wsdl:output message="tns:Delete_DraftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PRDraft_Submit">
+      <wsdl:input message="tns:PRDraft_SubmitSoapIn" />
+      <wsdl:output message="tns:PRDraft_SubmitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <wsdl:input message="tns:Get_MaterialReqDraftSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqDraftSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <wsdl:input message="tns:Get_MaterialReq_Submitted_ApprovalSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReq_Submitted_ApprovalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <wsdl:input message="tns:Get_DraftDetailsSoapIn" />
+      <wsdl:output message="tns:Get_DraftDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <wsdl:input message="tns:Get_MRSubmit_ApprovedDetailsSoapIn" />
+      <wsdl:output message="tns:Get_MRSubmit_ApprovedDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <wsdl:input message="tns:Get_MaterialReqBySupplierItemListSoapIn" />
+      <wsdl:output message="tns:Get_MaterialReqBySupplierItemListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ItemList">
+      <wsdl:input message="tns:Get_ItemListSoapIn" />
+      <wsdl:output message="tns:Get_ItemListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReasonDetails">
+      <wsdl:input message="tns:Get_ReasonDetailsSoapIn" />
+      <wsdl:output message="tns:Get_ReasonDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertDraftToDocument">
+      <wsdl:input message="tns:ConvertDraftToDocumentSoapIn" />
+      <wsdl:output message="tns:ConvertDraftToDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequest">
+      <wsdl:input message="tns:Get_InventoryRequestSoapIn" />
+      <wsdl:output message="tns:Get_InventoryRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequestDetails">
+      <wsdl:input message="tns:Get_InventoryRequestDetailsSoapIn" />
+      <wsdl:output message="tns:Get_InventoryRequestDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenPOList">
+      <wsdl:input message="tns:Get_OpenPOListSoapIn" />
+      <wsdl:output message="tns:Get_OpenPOListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReceiveInOutlet_Details">
+      <wsdl:input message="tns:Get_ReceiveInOutlet_DetailsSoapIn" />
+      <wsdl:output message="tns:Get_ReceiveInOutlet_DetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_GetPendingDrafts">
+      <wsdl:input message="tns:Get_GetPendingDraftsSoapIn" />
+      <wsdl:output message="tns:Get_GetPendingDraftsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_ApprovalStatus">
+      <wsdl:input message="tns:Update_ApprovalStatusSoapIn" />
+      <wsdl:output message="tns:Update_ApprovalStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveInOutlet">
+      <wsdl:input message="tns:ReceiveInOutletSoapIn" />
+      <wsdl:output message="tns:ReceiveInOutletSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_SalesTakingCountList">
+      <wsdl:input message="tns:Get_SalesTakingCountListSoapIn" />
+      <wsdl:output message="tns:Get_SalesTakingCountListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCounting">
+      <wsdl:input message="tns:Get_StockTakeCountingSoapIn" />
+      <wsdl:output message="tns:Get_StockTakeCountingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StockTakeApprove">
+      <wsdl:input message="tns:StockTakeApproveSoapIn" />
+      <wsdl:output message="tns:StockTakeApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCountingDetails">
+      <wsdl:input message="tns:Get_StockTakeCountingDetailsSoapIn" />
+      <wsdl:output message="tns:Get_StockTakeCountingDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Create_StockTakeCounting">
+      <wsdl:input message="tns:Create_StockTakeCountingSoapIn" />
+      <wsdl:output message="tns:Create_StockTakeCountingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_StockTakeApprove">
+      <wsdl:input message="tns:Update_StockTakeApproveSoapIn" />
+      <wsdl:output message="tns:Update_StockTakeApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDOStatus">
+      <wsdl:input message="tns:UpdateDOStatusSoapIn" />
+      <wsdl:output message="tns:UpdateDOStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MasterSoap" type="tns:MasterSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create_InventoryTransferRequest">
+      <soap:operation soapAction="http://tempuri.org/Create_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequest">
+      <soap:operation soapAction="http://tempuri.org/Get_OpenTransferRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequestDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_OpenTransferRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OutletListPR">
+      <soap:operation soapAction="http://tempuri.org/Get_OutletListPR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approve_InventoryTransferRequest">
+      <soap:operation soapAction="http://tempuri.org/Approve_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reject_InventoryTransferRequest">
+      <soap:operation soapAction="http://tempuri.org/Reject_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryTransferRequest_ItemSearch">
+      <soap:operation soapAction="http://tempuri.org/Get_InventoryTransferRequest_ItemSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Insert_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Update_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Submit_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Submit_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approve_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Approve_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Delete_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ApprovalStatus_Summary">
+      <soap:operation soapAction="http://tempuri.org/Get_ApprovalStatus_Summary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <soap:operation soapAction="http://tempuri.org/Get_UserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Outlet_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Supplier_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_Company_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqByItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <soap:operation soapAction="http://tempuri.org/Create_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <soap:operation soapAction="http://tempuri.org/Delete_Drafts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRDraft_Submit">
+      <soap:operation soapAction="http://tempuri.org/PRDraft_Submit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqDraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReq_Submitted_Approval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_DraftDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_MRSubmit_ApprovedDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <soap:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplierItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ItemList">
+      <soap:operation soapAction="http://tempuri.org/Get_ItemList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReasonDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_ReasonDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertDraftToDocument">
+      <soap:operation soapAction="http://tempuri.org/ConvertDraftToDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequest">
+      <soap:operation soapAction="http://tempuri.org/Get_InventoryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequestDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_InventoryRequestDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenPOList">
+      <soap:operation soapAction="http://tempuri.org/Get_OpenPOList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReceiveInOutlet_Details">
+      <soap:operation soapAction="http://tempuri.org/Get_ReceiveInOutlet_Details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_GetPendingDrafts">
+      <soap:operation soapAction="http://tempuri.org/Get_GetPendingDrafts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ApprovalStatus">
+      <soap:operation soapAction="http://tempuri.org/Update_ApprovalStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveInOutlet">
+      <soap:operation soapAction="http://tempuri.org/ReceiveInOutlet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_SalesTakingCountList">
+      <soap:operation soapAction="http://tempuri.org/Get_SalesTakingCountList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCounting">
+      <soap:operation soapAction="http://tempuri.org/Get_StockTakeCounting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StockTakeApprove">
+      <soap:operation soapAction="http://tempuri.org/StockTakeApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCountingDetails">
+      <soap:operation soapAction="http://tempuri.org/Get_StockTakeCountingDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_StockTakeCounting">
+      <soap:operation soapAction="http://tempuri.org/Create_StockTakeCounting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_StockTakeApprove">
+      <soap:operation soapAction="http://tempuri.org/Update_StockTakeApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDOStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateDOStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MasterSoap12" type="tns:MasterSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Create_InventoryTransferRequest">
+      <soap12:operation soapAction="http://tempuri.org/Create_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequest">
+      <soap12:operation soapAction="http://tempuri.org/Get_OpenTransferRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenTransferRequestDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_OpenTransferRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OutletListPR">
+      <soap12:operation soapAction="http://tempuri.org/Get_OutletListPR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approve_InventoryTransferRequest">
+      <soap12:operation soapAction="http://tempuri.org/Approve_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reject_InventoryTransferRequest">
+      <soap12:operation soapAction="http://tempuri.org/Reject_InventoryTransferRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryTransferRequest_ItemSearch">
+      <soap12:operation soapAction="http://tempuri.org/Get_InventoryTransferRequest_ItemSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Insert_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Update_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Submit_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Submit_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Approve_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Approve_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Delete_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ApprovalStatus_Summary">
+      <soap12:operation soapAction="http://tempuri.org/Get_ApprovalStatus_Summary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_UserInformation">
+      <soap12:operation soapAction="http://tempuri.org/Get_UserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Outlet_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Outlet_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Supplier_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Supplier_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Company_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_Company_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplier">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqByItem">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqByItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_PurchaseRequest">
+      <soap12:operation soapAction="http://tempuri.org/Create_PurchaseRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Drafts">
+      <soap12:operation soapAction="http://tempuri.org/Delete_Drafts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRDraft_Submit">
+      <soap12:operation soapAction="http://tempuri.org/PRDraft_Submit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqDraft">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqDraft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReq_Submitted_Approval">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReq_Submitted_Approval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_DraftDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_DraftDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MRSubmit_ApprovedDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_MRSubmit_ApprovedDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_MaterialReqBySupplierItemList">
+      <soap12:operation soapAction="http://tempuri.org/Get_MaterialReqBySupplierItemList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ItemList">
+      <soap12:operation soapAction="http://tempuri.org/Get_ItemList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReasonDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_ReasonDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertDraftToDocument">
+      <soap12:operation soapAction="http://tempuri.org/ConvertDraftToDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequest">
+      <soap12:operation soapAction="http://tempuri.org/Get_InventoryRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_InventoryRequestDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_InventoryRequestDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_OpenPOList">
+      <soap12:operation soapAction="http://tempuri.org/Get_OpenPOList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_ReceiveInOutlet_Details">
+      <soap12:operation soapAction="http://tempuri.org/Get_ReceiveInOutlet_Details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_GetPendingDrafts">
+      <soap12:operation soapAction="http://tempuri.org/Get_GetPendingDrafts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ApprovalStatus">
+      <soap12:operation soapAction="http://tempuri.org/Update_ApprovalStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveInOutlet">
+      <soap12:operation soapAction="http://tempuri.org/ReceiveInOutlet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_SalesTakingCountList">
+      <soap12:operation soapAction="http://tempuri.org/Get_SalesTakingCountList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCounting">
+      <soap12:operation soapAction="http://tempuri.org/Get_StockTakeCounting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StockTakeApprove">
+      <soap12:operation soapAction="http://tempuri.org/StockTakeApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_StockTakeCountingDetails">
+      <soap12:operation soapAction="http://tempuri.org/Get_StockTakeCountingDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Create_StockTakeCounting">
+      <soap12:operation soapAction="http://tempuri.org/Create_StockTakeCounting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_StockTakeApprove">
+      <soap12:operation soapAction="http://tempuri.org/Update_StockTakeApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDOStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDOStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Master">
+    <wsdl:port name="MasterSoap" binding="tns:MasterSoap">
+      <soap:address location="http://localhost:35511/Master.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MasterSoap12" binding="tns:MasterSoap12">
+      <soap12:address location="http://localhost:35511/Master.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1 @@
+function beginReq(){$find(ModalProgress).show()}function endReq(){$find(ModalProgress).hide()}Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginReq),Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endReq)

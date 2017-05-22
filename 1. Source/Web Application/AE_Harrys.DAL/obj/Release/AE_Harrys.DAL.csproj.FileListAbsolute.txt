@@ -1,0 +1,4 @@
+E:\SVN Work area\Harrys application\Source\AE_Harrys.DAL\bin\Release\AE_Harrys.DAL.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.DAL\bin\Release\AE_Harrys.DAL.pdb
+E:\SVN Work area\Harrys application\Source\AE_Harrys.DAL\obj\Release\AE_Harrys.DAL.dll
+E:\SVN Work area\Harrys application\Source\AE_Harrys.DAL\obj\Release\AE_Harrys.DAL.pdb
