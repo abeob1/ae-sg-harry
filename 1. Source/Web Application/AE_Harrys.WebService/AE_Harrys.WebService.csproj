@@ -13,6 +13,7 @@
     <RootNamespace>AE_Harrys.WebService</RootNamespace>
     <AssemblyName>AE_Harrys.WebService</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

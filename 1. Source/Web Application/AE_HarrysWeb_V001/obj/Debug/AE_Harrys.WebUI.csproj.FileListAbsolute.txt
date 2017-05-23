@@ -121,3 +121,15 @@ E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Applicati
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.cs
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\ReceiveIntoOutletDetails.aspx.designer.cs
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.dll
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_HarrysWeb_V001.pdb
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.dll
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.dll
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.Common.pdb
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\bin\AE_Harrys.DAL.pdb
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\obj\Debug\AE_Harrys.WebUI.csprojResolveAssemblyReference.cache
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.dll
+E:\Harrys\1. Source\Web Application\AE_HarrysWeb_V001\obj\Debug\AE_HarrysWeb_V001.pdb

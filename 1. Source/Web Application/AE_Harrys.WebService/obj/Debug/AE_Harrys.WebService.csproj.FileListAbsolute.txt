@@ -148,3 +148,17 @@ E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Applicati
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csproj.ResolveComReference.cache
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.dll
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.WebService.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.WebService.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.BLL.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.Common.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.DAL.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\Interop.SAPbobsCOM.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.BLL.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.Common.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.DAL.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csprojResolveAssemblyReference.cache
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csproj.ResolveComReference.cache
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.pdb

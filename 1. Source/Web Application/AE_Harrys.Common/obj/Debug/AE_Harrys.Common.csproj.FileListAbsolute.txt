@@ -68,3 +68,10 @@ E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Applicati
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.csprojResolveAssemblyReference.cache
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.dll
 E:\Abeo Projects\Harrys Web Application_PhaseII_May18th2017\Harrys Web Application_PhaseII\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\bin\Debug\AE_Harrys.Common.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\bin\Debug\AE_Harrys.Common.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\bin\Debug\AE_Harrys.DAL.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\bin\Debug\AE_Harrys.DAL.pdb
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.csprojResolveAssemblyReference.cache
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.dll
+E:\Harrys\1. Source\Web Application\AE_Harrys.Common\obj\Debug\AE_Harrys.Common.pdb

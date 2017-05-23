@@ -53,7 +53,7 @@ namespace AE_Harrys.BLL
                 oCompany.DbPassword = sDBPassword;
                 oCompany.language = SAPbobsCOM.BoSuppLangs.ln_English;
                 oCompany.UseTrusted = false;
-                oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2008;
+                oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2014;
 
 
                 oCompany.CompanyDB = sDBName;// sDataBaseName;

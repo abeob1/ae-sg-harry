@@ -549,7 +549,8 @@ namespace AE_Harrys.BLL
                 oCompany.DbPassword = sDBPassword;
                 oCompany.language = SAPbobsCOM.BoSuppLangs.ln_English;
                 oCompany.UseTrusted = false;
-                oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2008;
+               // oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2014;
+                oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2014;
 
 
                 oCompany.CompanyDB = sDBName;// sDataBaseName;
@@ -557,6 +558,7 @@ namespace AE_Harrys.BLL
                 oCompany.Password = sPassword;
 
                 if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug("Connecting the Database...", sFuncName);
+                if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug(sServer + " - " + sLicServerName + " - " + sDBUserName + " - " + sDBPassword + " - " + oCompany.DbServerType, sFuncName);
 
                 lRetCode = oCompany.Connect();
 
