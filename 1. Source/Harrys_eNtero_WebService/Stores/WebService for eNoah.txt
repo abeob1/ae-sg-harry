@@ -1,0 +1,35 @@
+1.	Addon Master: 
+-	From Item
+-	UDF POS Flag=Y
+-	UDF ItemSource=SVC
+2.	Addon Selection
+-	Same as Addon Master
+-	With parameter to get Price
+3.	Package Master
+-	From BOM
+-	BOM Type = Sales
+-	POSFlag=Y
+4.	Package Selection
+-	Same as PackageMaster
+-	With parameter to get price
+5.	Room Type master
+-	From Item
+-	POSFlag=Y
+-	ItemSource=ROOM
+6.	Agency Master
+-	From Business Partner
+-	CardType= Customer
+-	Group name like “Agency”
+
+7.	CorporateMaster
+-	From Business Partner
+-	CardType= Customer
+-	Group name like “Corporate”
+8.	MeetingRoomType Master
+-	From Item
+-	POSFlag=Y
+-	ItemSource=MEETING
+9.	TravelAgentMaster
+-	From Business Partner
+-	CardType= Customer
+-	Group name like “Travel Agent”

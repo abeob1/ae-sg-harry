@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\WS_eNtero" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Stores/sp_AI_ItemSelection.sql" publishTime="06/28/2013 18:05:17" />
+    <file relUrl="bin/SBOWebService.dll" publishTime="08/13/2015 14:45:22" />
+    <file relUrl="Stores/sp_CreateNewUser.sql" publishTime="07/08/2013 18:32:45" />
+    <file relUrl="Stores/sp_clearUser.sql" publishTime="07/08/2013 18:32:45" />
+    <file relUrl="MasterData.asmx" publishTime="04/25/2013 09:49:07" />
+    <file relUrl="Stores/usf_getChildList.sql" publishTime="06/28/2013 18:03:52" />
+    <file relUrl="bin/SBOWebService.xml" publishTime="08/13/2015 14:45:22" />
+    <file relUrl="Reports.asmx" publishTime="04/25/2013 09:49:07" />
+    <file relUrl="Stores/sp_AI_AddonMaster.sql" publishTime="04/22/2014 19:38:04" />
+    <file relUrl="Web.config" publishTime="08/13/2015 15:37:16" />
+    <file relUrl="eHMS.asmx" publishTime="04/25/2013 09:49:07" />
+    <file relUrl="bin/SBOWebService.pdb" publishTime="08/13/2015 14:45:22" />
+    <file relUrl="GetDefault.asmx" publishTime="04/25/2013 09:49:07" />
+    <file relUrl="Stores/usf_getPrice.sql" publishTime="12/15/2014 15:15:27" />
+    <file relUrl="bin/Interop.Shell32.dll" publishTime="04/27/2015 18:05:10" />
+    <file relUrl="Stores/sp_AI_RoomTypeMaster.sql" publishTime="12/16/2014 15:22:21" />
+    <file relUrl="Transaction.asmx" publishTime="04/25/2013 09:49:07" />
+    <file relUrl="Stores/sp_AI_AddonSelection.sql" publishTime="06/28/2013 18:05:28" />
+    <file relUrl="Stores/sp_AI_LoadEmpID.sql" publishTime="06/28/2013 18:05:01" />
+    <file relUrl="Stores/sp_AI_PackageSelection.sql" publishTime="12/15/2014 18:22:22" />
+  </publishProfile>
+</publishData>
