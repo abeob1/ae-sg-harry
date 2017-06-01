@@ -135,13 +135,15 @@ namespace AE_Harrys.BLL
                             sQueryString = "select  Top 1  T0.DocEntry   from PRQ1 T0 with (nolock) inner join OPRQ T1 with (nolock) " +
                                            " on T0.DocEntry = T1.DocEntry where LineVendor ='VA-HARHO' and T1.CANCELED <> 'Y' " +
                                            " and T1.DocStatus = 'O' group by T0.DocEntry  order by DocEntry desc ";
+                            sPurReqDocEntry = new DataSet();
 
                             sPurReqDocEntry = oGetSingleValue.Get_SingleValue(sQueryString, sConnString, sErrDesc);
-
+                            if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug("RowCount " + sPurReqDocEntry.Tables[0].Rows.Count, sFuncName);
                             if (sPurReqDocEntry.Tables[0].Rows.Count != 0 && sPurReqDocEntry != null)
                             {
 
                                 if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug("Document Already Exists!!!", sFuncName);
+                                if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug(" Old DocEntry " + sPurReqDocEntry.Tables[0].Rows[0][0].ToString(), sFuncName);
 
                                 if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug("Calling CopyPurReqToPurchaseQuot()", sFuncName);
 
