@@ -545,3 +545,15 @@
 [11/05/2016 4:08:14 p.m.][ConvertPOToGRPO()] Completed with SUCCESS 
 [11/05/2016 4:08:20 p.m.][ReceiveInOutlet()] Completed With SUCCESS
 [11/05/2016 4:08:27 p.m.][ReceiveInOutlet()] Completed With SUCCESS  
+[1/06/2017 2:29:51 p.m.][Get_Company_Details()] Starting Function 
+[1/06/2017 2:29:51 p.m.][Get_Company_Details()] Calling Get_NewConnectionString() 
+[1/06/2017 2:29:51 p.m.][Get_NewConnectionString()] Starting Function 
+[1/06/2017 2:29:51 p.m.][Get_NewConnectionString()] Completed With SUCCESS  
+[1/06/2017 2:29:51 p.m.][Get_Company_Details()] Calling Get_CompanyList() 
+[1/06/2017 2:29:51 p.m.][Get_CompanyList()] Starting Function 
+[1/06/2017 2:29:51 p.m.][Get_CompanyList()] Calling Run_QueryString()
+[1/06/2017 2:29:51 p.m.][Run_QueryString()] Starting Function 
+[1/06/2017 2:29:51 p.m.][Run_QueryString()] Query : SELECT T0.[U_DBName], T0.[U_CompName], T0.[U_SAPUserName], T0.[U_SAPPassword],  T0.[U_DBUserName], T0.[U_DBPassword], T0.[U_ConnString] ,T0.[U_Server],T0.[U_LicenseServer] FROM [dbo].[@WEB_CMPDET]  T0 with (nolock) 
+[1/06/2017 2:30:07 p.m.][Run_QueryString()] Completed With ERROR  
+[1/06/2017 2:30:07 p.m.][Get_CompanyList()] Completed With ERROR  
+[1/06/2017 2:30:07 p.m.][Get_Company_Details()] Completed With ERROR  
