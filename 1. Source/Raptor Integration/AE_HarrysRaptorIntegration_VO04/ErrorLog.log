@@ -1,0 +1,39 @@
+[07/25/2017 14:50:34][          ExecuteSQLQuery_DT()] Cannot resolve the collation conflict between "SQL_Latin1_General_CP850_CI_AS" and "SQL_Latin1_General_CP1_CI_AS" in the equal to operation.
+[07/25/2017 15:00:10][      ConnectToTargetCompany()] Connection to Database (UAT_HSukiGroup) 
+ 	 No database server type specified
+[07/25/2017 15:11:53][          ExecuteSQLQuery_DT()] Invalid object name 'AB_SalesTransHeader'.
+[07/25/2017 15:20:40][          ExecuteSQLQuery_DT()] Invalid column name 'ErrorMsg'.
+[07/25/2017 15:38:16][      ConnectToTargetCompany()] Connection to Database (UAT_HSukiGroup) 
+ 	  - The specified resource name cannot be found in the image file.
+
+[07/25/2017 18:10:25][          AR_InvoiceCreation()] Column 'HOutlet' does not belong to table .
+[07/25/2017 18:10:25][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[07/25/2017 18:17:12][          AR_InvoiceCreation()] Column 'HOutlet' does not belong to table .
+[07/25/2017 18:17:19][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[07/25/2017 18:18:31][      ConnectToTargetCompany()] Connection to Database (UAT_HSukiGroup) 
+ 	 Unable to initialize OBServerDLL.dll
+[07/25/2017 18:18:31][                        Main()] Connection to Database (UAT_HSukiGroup) 
+ 	 Unable to initialize OBServerDLL.dll
+[07/25/2017 18:19:21][     MarketingDocuments_Sync()] No matching records found in OWHS table 11JKC
+[07/25/2017 18:21:09][     MarketingDocuments_Sync()] No matching records found in OWHS table 11JKC
+[07/25/2017 18:30:51][          AR_InvoiceCreation()] Invalid BP code  [ODRF.CardCode] , 'CASH'
+[07/25/2017 18:31:05][     MarketingDocuments_Sync()] Invalid BP code  [ODRF.CardCode] , 'CASH'
+[07/26/2017 02:12:02][          AR_InvoiceCreation()] Object reference not set to an instance of an object.
+[07/26/2017 02:12:02][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[07/26/2017 02:19:44][          AR_InvoiceCreation()] Quantity falls into negative inventory  [INV1.ItemCode][line: 1]
+[07/26/2017 10:09:58][     MarketingDocuments_Sync()] No matching records found in OWHS table ADMIN
+[07/26/2017 10:38:42][            AR_IncomingPayment] Column 'POSTxNo' does not belong to table .
+[07/26/2017 10:38:42][     MarketingDocuments_Sync()] Column 'POSTxNo' does not belong to table .
+[07/26/2017 11:29:03][      ConnectToTargetCompany()] Connection to Database (UAT_HSukiGroup) 
+ 	 Failed to connect or logon to SLD, please check connection parameters and configure file
+[07/26/2017 11:29:03][                        Main()] Connection to Database (UAT_HSukiGroup) 
+ 	 Failed to connect or logon to SLD, please check connection parameters and configure file
+[07/26/2017 11:33:53][            AR_IncomingPayment] PaymentAmount is neither a DataColumn nor a DataRelation for table .
+[07/26/2017 11:34:02][     MarketingDocuments_Sync()] PaymentAmount is neither a DataColumn nor a DataRelation for table .
+[07/26/2017 11:39:24][            AR_IncomingPayment] Conversion from string "CASH" to type 'Integer' is not valid.
+[07/26/2017 11:39:32][     MarketingDocuments_Sync()] Conversion from string "CASH" to type 'Integer' is not valid.
+[07/26/2017 11:44:20][            AR_IncomingPayment] Payment method not defined  [RCT3.CrTypeCode][line: 1]
+[07/26/2017 11:44:20][     MarketingDocuments_Sync()] Payment method not defined  [RCT3.CrTypeCode][line: 1]
+[07/26/2017 12:18:57][            AR_IncomingPayment] Payment means specification missing  [RCT3.VoucherNum][line: 0]
+[07/26/2017 12:18:57][     MarketingDocuments_Sync()] Payment means specification missing  [RCT3.VoucherNum][line: 0]
+[07/26/2017 12:26:50][     MarketingDocuments_Sync()] (-1) Please Fill In The Cost Centre.
