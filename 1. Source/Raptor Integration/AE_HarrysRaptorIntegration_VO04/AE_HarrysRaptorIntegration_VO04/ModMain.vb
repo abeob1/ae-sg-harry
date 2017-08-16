@@ -6,6 +6,7 @@
     Public oDT_PaymentData As DataTable = Nothing
     Public oDT_Warehouse As DataTable = Nothing
     Public oDT_ItemGroup As DataTable = Nothing
+    Public oDT_Arinvoice As DataTable = Nothing
 
 
     Sub Main()

@@ -98,6 +98,7 @@ Module modCommon
         Dim oDV_InvoiceInform As DataView = Nothing
         Dim oDV_InvoiceDetails As DataView = Nothing
         Dim oDV_PaymentsInform As DataView = Nothing
+        Dim oDV_ARInvoice As DataView = Nothing
         Dim oDT_Distinct As DataTable = New DataTable
         Dim oDT_InvoiceStatus As DataTable = New DataTable
         Dim sProductCode As String = String.Empty
@@ -128,12 +129,27 @@ Module modCommon
             oDV_InvoiceInform = New DataView(oDT_Invoice)
             oDV_InvoiceDetails = New DataView(oDT_InvoiceDetails)
             oDV_PaymentsInform = New DataView(oDT_Payments)
+            oDV_ARInvoice = New DataView(oDT_Arinvoice)
             ' oDT_Distinct = oDV_InvoiceInform.Table.DefaultView.ToTable(True, "HTransID")
             oDT_Distinct = oDV_InvoiceInform.Table.DefaultView.ToTable(True, "FileID")
             For imjs As Integer = 0 To oDT_Distinct.Rows.Count - 1
 
+                ''''''''''--------------------------------------
+                '''''---------- checking FileID exists or not
+                ''''' -------------------------------------------
+
+                'oDV_ARInvoice.RowFilter = "NumAtCard='" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
+                'If oDV_ARInvoice.Count > 0 Then
+                '    sErrDisplay = oDT_Distinct.Rows(imjs).Item("FileID") & " - File ID already exists in AR Invoice " & oDV_ARInvoice.Item(0)("DocNum")
+                '    oDT_InvoiceStatus.Rows.Add(oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim, _
+                '                                                                              "", "FAIL", _
+                '                                                   sErrDisplay, "", Now.ToShortTimeString, "", "", oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim)
+                '    fError = True
+                '    GoTo ErrorDis
+                'End If
 
 
+                oDV_InvoiceInform.RowFilter = "FileID='" & oDT_Distinct.Rows(imjs).Item("FileID") & "'"
                 ''''''''''--------------------------------------
                 '''''----------  Payment Code Validation
                 ''''' -------------------------------------------
@@ -199,7 +215,7 @@ ErrorDis:
                             sSQL += "UPDATE [SalesTransHeader]" & _
     "SET [SAPSyncFileStatus] = '" & oDT_InvoiceStatus.Rows(imjd).Item("Status").ToString.Trim & "' ,[SAPSyncErrMsg] = '" & oDT_InvoiceStatus.Rows(imjd).Item("HErrorMsg").ToString.Trim & "' , " & _
     "[ERRDateTime] = GETDATE() " & _
-    "WHERE [FileID] = '" & oDT_InvoiceStatus.Rows(imjd).Item("FileID").ToString.Trim & "' "
+    "WHERE [FileID] = '" & oDT_InvoiceStatus.Rows(imjd).Item("FileID").ToString.Trim & "' and [POSSyncCompletionStatus]=1"
 
                         Next imjd
                         oDT_InvoiceStatus.Clear()
@@ -215,6 +231,7 @@ ErrorDis:
 
                 Else
                     oDT_InvoiceStatus.Clear()
+                    oDV_InvoiceInform.RowFilter = "FileID = '" & oDT_Distinct.Rows(imjs).Item("FileID") & "'"
                     MarketingDocuments_Sync(oDV_InvoiceInform, oDV_InvoiceDetails, oDV_PaymentsInform, p_oCompany, oDT_InvoiceStatus, sErrDesc)
 
                 End If
@@ -274,6 +291,7 @@ ErrorDis:
         Dim sCardCode As String = String.Empty
         Dim oDT_Payamount As DataTable = New DataTable
         Dim dPayamount As Double = 0
+
         If oDVPayment.Count > 0 Then
             oDT_Payamount = oDVPayment.ToTable
         End If
@@ -306,8 +324,9 @@ ErrorDis:
                 If oDVARInvoice.Count > 0 Then
                     Console.WriteLine("Calling Funcion AR_InvoiceCreation() " & sDocEntry, sFuncName)
                     If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry " & sDocEntry, sFuncName)
-                    If AR_InvoiceCreation(oDVARInvoice, oDVARInvoiceLine, oDVPayment, oCompany, sDocEntry, sDocNum, sCardCode, sErrDesc) <> RTN_SUCCESS Then
 
+
+                    If AR_InvoiceCreation(oDVARInvoice, oDVARInvoiceLine, oDVPayment, oCompany, sDocEntry, sDocNum, sCardCode, sErrDesc) <> RTN_SUCCESS Then
                         Call WriteToLogFile(sErrDesc, sFuncName)
                         Console.WriteLine("Completed with ERROR", sFuncName)
                         oDTStatus.Rows.Add(oDVARInvoice.Item(0).Row("Outlet").ToString.Trim, "", "FAIL", "AR Invoice:- " & sErrDesc, "", Now.ToShortTimeString, "", "", oDVARInvoice.Item(0).Row("FileID").ToString.Trim)
@@ -316,8 +335,9 @@ ErrorDis:
                         If oCompany.InTransaction = True Then oCompany.EndTransaction(SAPbobsCOM.BoWfTransOpt.wf_RollBack)
                         MarketingDocuments_Sync = Nothing
                         GoTo ERRORDISPLAY
-
                     End If
+
+
                 Else
                     If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("No matching records found in Payement Table : AR Invoice DocEntry " & sDocEntry, sFuncName)
                     Console.WriteLine("No matching records found in Payement Table " & sDocEntry, sFuncName)
@@ -372,7 +392,7 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
                     sQueryup += "UPDATE " & p_oCompDef.p_sIntDBName & ".. [SalesTransHeader]" & _
 "SET [SAPSyncFileStatus] = '" & oDTStatus.Rows(imjs).Item("Status").ToString.Trim & "' ,[SAPSyncErrMsg] = '" & Replace(oDTStatus.Rows(imjs).Item("HErrorMsg").ToString.Trim, "'", "''") & "' , " & _
 "[ERRDateTime] =  DATEADD(day,datediff(day,0,GETDATE()),0)  " & _
-"WHERE [FileID] = '" & oDTStatus.Rows(imjs).Item("FileID").ToString.Trim & "'"
+"WHERE [FileID] = '" & oDTStatus.Rows(imjs).Item("FileID").ToString.Trim & "' and [POSSyncCompletionStatus] = 1"
 
 
 
@@ -557,17 +577,21 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Fetching INT DB SalesTransHeader Query : " & sQuery, sFuncName)
 
             'Getting the Data from Invoice Table as DataSet
-            Console.WriteLine("Calling ExecuteSQLQuery_DT() ", sFuncName)
+            ''  Console.WriteLine("Calling ExecuteSQLQuery_DT() ", sFuncName)
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)
             oDT_InvoiceHeader = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
-            sQuery = "SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus] " & _
-            " FROM [dbo].[SalesTransDetails] left join [" & p_oCompDef.p_sDataBaseName & "] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') "
+            sQuery = "SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[POSItemCode] [POSCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus] " & _
+          " FROM [dbo].[SalesTransDetails] left join [" & p_oCompDef.p_sDataBaseName & "] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') order by [FileID],[SeqID] "
+
+          
+            '  sQuery = "SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate],  [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus] " & _
+            '" FROM [dbo].[SalesTransDetails] where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') "
 
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Fetching INT DB SalesTransDetails Query : " & sQuery, sFuncName)
 
             'Getting the Data from Invoice Table as DataSet
-            Console.WriteLine("Calling ExecuteSQLQuery_DT() ", sFuncName)
+            '' Console.WriteLine("Calling ExecuteSQLQuery_DT() ", sFuncName)
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)
             oDT_InvoiceDetails = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
@@ -595,6 +619,14 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)
 
             oDT_ItemGroup = ExecuteSQLQuery_DT(P_sConString, sQuery)
+
+
+            sQuery = "SELECT T0.[NumAtCard], T0.[DocNum] FROM [" & p_oCompDef.p_sDataBaseName & "].. OINV T0"
+            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Item Group : " & sQuery, sFuncName)
+
+            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)
+
+            oDT_Arinvoice = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
             ' AE_STUTTGART_DLL.p_iDebugMode = p_iDebugMode
 

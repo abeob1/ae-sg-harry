@@ -43,6 +43,7 @@
         Dim oDVTmp As DataView = Nothing
         Dim oDVItemGroup As DataView = Nothing
         Dim sprojectcode As String = String.Empty
+        Dim dPOSDocTotal As Double = 0
         Dim sDiscItemCodes() As String = New String() {"HDUTY", "HSPOI", "HMKTG", "HFLUS", "HENTM"}
         If oDT_Payamount.Rows.Count > 0 Then
             dPayamount = Convert.ToDecimal(oDT_Payamount.Compute("sum(PaymentAmt)", String.Empty).ToString)
@@ -77,6 +78,7 @@
             dIncomeDate = DateTime.ParseExact(oDVARInvoice.Item(0).Row("DocDate").ToString.Trim, "yyyyMMdd", Nothing)
             sFileID = CStr(oDVARInvoice.Item(0).Row("FileID").ToString.Trim)
             sWhsCode = CStr(oDVARInvoice.Item(0).Row("Outlet").ToString.Trim)
+            dPOSDocTotal = CDbl(oDVARInvoice.Item(0).Row("TotalGrossAmt").ToString.Trim)
             'If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("AR Invoice dPostxdatetime " & dPostxdatetime, sFuncName)
             'dPostxdatetime = oDVARInvoice.Item(0).Row("HPOSTxDatetime").ToString.Trim
 
@@ -88,25 +90,31 @@
             oARInvoice.DocDate = dIncomeDate
             oARInvoice.DocDueDate = dIncomeDate
             oARInvoice.TaxDate = dIncomeDate
-            oARInvoice.NumAtCard = sWhsCode & " - " & CStr(CDate(dIncomeDate).ToString("yyyyMMdd"))
+            oARInvoice.NumAtCard = sFileID ''sWhsCode & " - " & CStr(CDate(dIncomeDate).ToString("yyyyMMdd"))
             ''sWhsCode & " - " & sPOSNumber
 
             If Not String.IsNullOrEmpty(sWhsCode) Then
                 oARInvoice.UserFields.Fields.Item("U_Outlet").Value = sWhsCode
             End If
             oARInvoice.UserFields.Fields.Item("U_Covers").Value = oDVARInvoice.Item(0).Row("Covers").ToString.Trim
-            oDT_Distinct = oDVARInvoiceLine.Table.DefaultView.ToTable(True, "POSItemCode")
+            oDT_Distinct = oDVARInvoiceLine.ToTable(True, "POSCode")
+            ''  oDT_Distinct = oDVARInvoiceLine.Table.DefaultView.ToTable(True, "POSItemCode")
             For Each oDr As DataRow In oDT_Distinct.Rows
-                oDVARInvoiceLine.RowFilter = "POSItemCode='" & oDr("POSItemCode").ToString.Trim & "'"
-                oDVTmp.RowFilter = "POSItemCode='" & oDr("POSItemCode").ToString.Trim & "'"
+                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("POSItemCode  " & oDr("POSCode").ToString.Trim, sFuncName)
+                oDVARInvoiceLine.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "'"
+                oDVTmp.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "' and FileID ='" & sFileID & "'"
                 oDTtmp = New DataTable
-                oDTtmp = oDVARInvoiceLine.ToTable
+                oDTtmp = oDVTmp.ToTable
                 If oDTtmp.Rows.Count > 0 Then
                     DQTY = Convert.ToDecimal(oDTtmp.Compute("sum(Qty)", String.Empty).ToString)
                     dPrice = Convert.ToDecimal(oDTtmp.Compute("sum(LineTotal)", String.Empty).ToString)
+                Else
+                    sErrDesc = "Raptor Code not matching in SAP " & oDr("POSItemCode").ToString.Trim
+                    Return RTN_ERROR
                 End If
 
                 For Each dvr As DataRowView In oDVARInvoiceLine
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("SAPItemCode  " & dvr("POSItemCode").ToString.Trim & "  -  " & "  Qty " & DQTY & "  -  " & " Unit Price " & dPrice, sFuncName)
                     oARInvoice.Lines.ItemCode = dvr("POSItemCode").ToString.Trim
                     oARInvoice.Lines.Quantity = DQTY  ''Math.Abs(CDbl(dvr("Qty").ToString.Trim))
                     sWhsCodeL = Left(dvr("Outlet").ToString.Trim, 5)
@@ -121,8 +129,8 @@
                     oARInvoice.Lines.CostingCode = sWhsCodeL
                     oARInvoice.Lines.COGSCostingCode = sWhsCodeL
                     oARInvoice.Lines.WarehouseCode = sWhsCodeL
-                    '' oARInvoice.Lines.VatGroup = dvr("VatGourpSa").ToString.Trim
-                    oARInvoice.Lines.UserFields.Fields.Item("U_DisCode").Value = dvr("VatGourpSa").ToString.Trim
+                    ''   If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("DiscCode " & dvr("DiscCode").ToString.Trim, sFuncName)
+                    oARInvoice.Lines.UserFields.Fields.Item("U_DiscCode").Value = dvr("DiscCode").ToString.Trim
                     Select Case dvr("SalesCategory").ToString.Trim.ToUpper
                         Case "C"
                             oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
@@ -214,20 +222,20 @@
                 oARInvoice.Lines.Add()
             End If
 
-            If CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim) <> 0.0 Then
-                oARInvoice.Lines.ItemCode = p_oCompDef.p_szSRounding      'dvr("POSItemCode").ToString.Trim
-                If CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim) > 0 Then
-                    oARInvoice.Lines.Quantity = 1
-                Else
-                    oARInvoice.Lines.Quantity = -1
-                End If
-                oARInvoice.Lines.LineTotal = Math.Abs(CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim))
-                oARInvoice.Lines.VatGroup = p_oCompDef.p_szeroTax
-                oARInvoice.Lines.WarehouseCode = sWhsCodeL
-                oARInvoice.Lines.CostingCode = sWhsCodeL
-                oARInvoice.Lines.COGSCostingCode = sWhsCodeL
-                oARInvoice.Lines.Add()
-            End If
+            'If CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim) <> 0.0 Then
+            '    oARInvoice.Lines.ItemCode = p_oCompDef.p_szSRounding      'dvr("POSItemCode").ToString.Trim
+            '    If CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim) > 0 Then
+            '        oARInvoice.Lines.Quantity = 1
+            '    Else
+            '        oARInvoice.Lines.Quantity = -1
+            '    End If
+            '    oARInvoice.Lines.LineTotal = Math.Abs(CDbl(oDVARInvoice.Item(0).Row("Rounding").ToString.Trim))
+            '    oARInvoice.Lines.VatGroup = p_oCompDef.p_szeroTax
+            '    oARInvoice.Lines.WarehouseCode = sWhsCodeL
+            '    oARInvoice.Lines.CostingCode = sWhsCodeL
+            '    oARInvoice.Lines.COGSCostingCode = sWhsCodeL
+            '    oARInvoice.Lines.Add()
+            'End If
 
             If CDbl(oDVARInvoice.Item(0).Row("Excess").ToString.Trim) <> 0.0 Then
                 oARInvoice.Lines.ItemCode = p_oCompDef.p_szSExcess     'dvr("POSItemCode").ToString.Trim
@@ -284,128 +292,16 @@
                 If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Draft Added Successfully  " & sDocEntry, sFuncName)
                 ''  Console.WriteLine("Assigning Batch   " & sDocEntry, sFuncName)
 
-                'If oARInvoice.GetByKey(sDocEntry) Then
-                '    dDocTotal = oARInvoice.DocTotal
-                '    sQuery = "SELECT T0.[LineNum], T0.[ItemCode], T0.[Quantity], T0.[WhsCode], T1.[ManBtchNum] FROM DRF1 T0 WITH (NOLOCK) INNER JOIN OITM T1 WITH (NOLOCK) ON T0.[ItemCode] = T1.[ItemCode] WHERE T0.[DocEntry] = '" & sDocEntry & "'"
-                '    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Draft Details SQL " & sQuery, sFuncName)
-                '    oRset.DoQuery(sQuery)
-                '    For imjs As Integer = 0 To oRset.RecordCount - 1
-                '        sProductCode = oRset.Fields.Item("ItemCode").Value
-                '        sManBatchItem = oRset.Fields.Item("ManBtchNum").Value
-                '        irow = oRset.Fields.Item("LineNum").Value 'Row Number
-                '        dInvQuantity = CDbl(oRset.Fields.Item("Quantity").Value) 'Item Quantity
-                '        If sManBatchItem = "Y" Then
-                '            fBatch = True
-                '            sQuery = "SELECT BatchNum ,Quantity , SysNumber  FROM OIBT WITH (NOLOCK) WHERE ItemCode ='" & sProductCode & "' and Quantity >0 " & _
-                '                              "AND WhsCode ='" & sWhsCode & "' ORDER BY InDate ASC "
-                '            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Batch Informations SQL " & sQuery, sFuncName)
-                '            oRset_Batch.DoQuery(sQuery)
-                '            For iloop As Integer = 0 To oRset_Batch.RecordCount - 1
-
-                '                dBatchQuantity = CDbl(oRset_Batch.Fields.Item("Quantity").Value) 'Batch Quantity
-                '                dBatchNumber = oRset_Batch.Fields.Item("BatchNum").Value 'Batch
-
-                '                oARInvoice.Lines.SetCurrentLine(irow)
-                '                oARInvoice.Lines.BatchNumbers.SetCurrentLine(iloop)
-
-                '                If dInvQuantity > 0 Then
-                '                    If oDT_Batch.Rows.Count = 0 Then
-                '                        oARInvoice.Lines.BatchNumbers.BatchNumber = dBatchNumber
-                '                        If dInvQuantity > dBatchQuantity Then
-                '                            'If Balance Qty>Batch Qty, then get full Batch Qty
-                '                            oARInvoice.Lines.BatchNumbers.Quantity = dBatchQuantity
-                '                            'minus current qty with Batch Qty
-                '                            dInvQuantity = dInvQuantity - dBatchQuantity
-                '                            oDT_Batch.Rows.Add(sProductCode, dBatchNumber, 0)
-                '                        Else
-                '                            oARInvoice.Lines.BatchNumbers.Quantity = dInvQuantity
-                '                            oDT_Batch.Rows.Add(sProductCode, dBatchNumber, dBatchQuantity - dInvQuantity)
-                '                            dInvQuantity = dInvQuantity - dInvQuantity
-                '                        End If
-
-                '                        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Add BatchNumbers ", sFuncName)
-                '                        oARInvoice.Lines.BatchNumbers.Add()
-                '                        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Success - Add BatchNumbers ", sFuncName)
-
-                '                        If dInvQuantity <= 0 Then Exit For
-                '                    Else
-                '                        oDV_Batch = New DataView(oDT_Batch)
-                '                        oDV_Batch.RowFilter = "ItemCode = '" & sProductCode & "' and BatchNum = '" & dBatchNumber & "'"
-                '                        If oDV_Batch.Count > 0 Then
-                '                            dRemBatchQuantity = oDV_Batch.Item(0).Row("Quantity")
-                '                            If dRemBatchQuantity > dInvQuantity Then
-                '                                oARInvoice.Lines.BatchNumbers.Quantity = dInvQuantity
-                '                                oARInvoice.Lines.BatchNumbers.BatchNumber = dBatchNumber
-                '                                oRow = oDT_Batch.Select("ItemCode = '" & sProductCode & "' and BatchNum = '" & dBatchNumber & "'")
-                '                                oRow(0)("Quantity") = oDV_Batch.Item(0).Row("Quantity") - dInvQuantity
-                '                                oARInvoice.Lines.BatchNumbers.Add()
-                '                                Exit For
-                '                            End If
-                '                            oARInvoice.Lines.BatchNumbers.Quantity = dRemBatchQuantity
-                '                            oARInvoice.Lines.BatchNumbers.BatchNumber = dBatchNumber
-                '                            oRow = oDT_Batch.Select("ItemCode = '" & sProductCode & "' and BatchNum = '" & dBatchNumber & "'")
-                '                            oRow(0)("Quantity") = 0
-                '                            dInvQuantity = dInvQuantity - dRemBatchQuantity
-                '                            oARInvoice.Lines.BatchNumbers.Add()
-
-                '                        Else
-                '                            oARInvoice.Lines.BatchNumbers.BatchNumber = dBatchNumber
-                '                            If dInvQuantity > dBatchQuantity Then
-                '                                'If Balance Qty>Batch Qty, then get full Batch Qty
-                '                                oARInvoice.Lines.BatchNumbers.Quantity = dBatchQuantity
-                '                                'minus current qty with Batch Qty
-                '                                dInvQuantity = dInvQuantity - dBatchQuantity
-                '                                oDT_Batch.Rows.Add(sProductCode, dBatchNumber, 0)
-                '                            Else
-                '                                oARInvoice.Lines.BatchNumbers.Quantity = dInvQuantity
-                '                                oDT_Batch.Rows.Add(sProductCode, dBatchNumber, dBatchQuantity - dInvQuantity)
-                '                                dInvQuantity = dInvQuantity - dInvQuantity
-                '                            End If
-
-                '                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Add BatchNumbers ", sFuncName)
-                '                            oARInvoice.Lines.BatchNumbers.Add()
-                '                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Success - Add BatchNumbers ", sFuncName)
-                '                            If dInvQuantity <= 0 Then Exit For
-                '                        End If
-                '                    End If
-                '                Else
-                '                    '-------------------------- -ve quantity
-                '                    oARInvoice.Lines.BatchNumbers.BatchNumber = dBatchNumber
-                '                    oARInvoice.Lines.BatchNumbers.Quantity = Math.Abs(dInvQuantity)
-                '                    oARInvoice.Lines.BatchNumbers.Add()
-                '                    Exit For
-                '                End If
-                '                oRset_Batch.MoveNext()
-                '            Next iloop
-                '        End If
-                '        oRset.MoveNext()
-                '    Next imjs
-
-                '    If fBatch = True Then
-                '        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting Update the AR Invoice Draft with Batch Information", sFuncName)
-                '        lRetCode = oARInvoice.Update() 'Update the batch information
-                '        Console.WriteLine("Batch Updated Successfully " & sDocEntry, sFuncName)
-                '        If lRetCode <> 0 Then
-                '            sErrDesc = oCompany.GetLastErrorDescription
-                '            'If sErrDesc = "Internal error (-10) occurred" Then
-                '            '    sErrDesc = "Quantity falls into negative inventory  [INV1.ItemCode][line: 2]"
-                '            'End If
-                '            Call WriteToLogFile(sErrDesc, sFuncName)
-                '            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with ERROR (Update AR Invoice Draft) ", sFuncName)
-                '            System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
-                '            Return RTN_ERROR
-
-                '        End If
-                '        fBatch = False
-                '    End If
-                'End If
-
                 SARDraft = sDocEntry
                 Console.WriteLine("Updating COGS Account " & sDocEntry, sFuncName)
                 If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Updating COGS Account  " & sDocEntry, sFuncName)
                 '' Console.WriteLine("Assigning Batch   " & sDocEntry, sFuncName)
                 If oARInvoice.GetByKey(sDocEntry) Then
                     dDocTotal = oARInvoice.DocTotal
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("dDocTotal  " & dDocTotal, sFuncName)
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("dPOSDocTotal  " & dPOSDocTotal, sFuncName)
+                    dDocTotal = dDocTotal - dPOSDocTotal
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("dDocTotal  " & dDocTotal, sFuncName)
                     If Update_Draft(oCompany, oARInvoice, dDocTotal, sWhsCodeL, "", sErrDesc) <> RTN_SUCCESS Then
                         Call WriteToLogFile(sErrDesc, sFuncName)
                         Console.WriteLine("Completed with ERROR (Updating COGS Account) " & sErrDesc, sFuncName)
@@ -438,6 +334,7 @@
                 Console.WriteLine("Converted To AR Invoice Successful " & sDocEntry, sFuncName)
                 If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with SUCCESS (Convert as a AR Invoice Document) " & sDocEntry, sFuncName)
 
+                sErrDesc = String.Empty
 
                 Return RTN_SUCCESS
             End If
@@ -453,19 +350,19 @@
             oARInvoice = Nothing
             Return RTN_ERROR
         Finally
-            If Not String.IsNullOrEmpty(SARDraft) Then
-                If oARInvoice.GetByKey(SARDraft) Then
-                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Remove te Draft ", sFuncName)
-                    lRetCode = oARInvoice.Remove()
-                    If lRetCode <> 0 Then
-                        sErrDesc = oCompany.GetLastErrorDescription
-                        Call WriteToLogFile(sErrDesc, sFuncName)
-                        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with ERROR ", sFuncName)
-                        ''System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
-                    End If
-                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with SUCCESS", sFuncName)
-                End If
-            End If
+            'If Not String.IsNullOrEmpty(SARDraft) Then
+            '    If oARInvoice.GetByKey(SARDraft) Then
+            '        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Remove te Draft ", sFuncName)
+            '        lRetCode = oARInvoice.Remove()
+            '        If lRetCode <> 0 Then
+            '            sErrDesc = oCompany.GetLastErrorDescription
+            '            Call WriteToLogFile(sErrDesc, sFuncName)
+            '            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with ERROR ", sFuncName)
+            '            ''System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
+            '        End If
+            '        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with SUCCESS", sFuncName)
+            '    End If
+            'End If
             System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
             System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice_Doc)
             oARInvoice = Nothing
@@ -770,6 +667,22 @@
             oDTDraftDetails = ConvertRecordset(oRS, sErrDesc)
             '' oDraft.GetByKey(sDraftDocNum)
 
+            If dGrossTotal <> 0 Then
+                oDraft.Lines.Add()
+                oDraft.Lines.ItemCode = p_oCompDef.p_szSRounding
+                If dGrossTotal > 0 Then
+                    oDraft.Lines.Quantity = -1
+                Else
+                    oDraft.Lines.Quantity = 1
+                End If
+                oDraft.Lines.UnitPrice = Math.Abs(dGrossTotal)
+                oDraft.Lines.VatGroup = p_oCompDef.p_szeroTax
+                oDraft.Lines.WarehouseCode = sWhsCode
+                oDraft.Lines.COGSCostingCode = sWhsCode
+                oDraft.Lines.CostingCode = sWhsCode
+
+            End If
+
             For IDraftRow As Integer = 0 To oDTDraftDetails.Rows.Count - 1
 
                 sCOGSAcctCode = oDTDraftDetails.Rows.Item(IDraftRow)("CogsAcct").ToString().Trim()
@@ -803,6 +716,8 @@
                 Next
                 IDraftRow = IDraftRow + iCount
             Next
+
+
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Before Update the Draft With Update Draft", sFuncName)
             lRetCode = oDraft.Update()
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("After Update the Draft. Return Value : " & lRetCode, sFuncName)

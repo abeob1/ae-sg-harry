@@ -37,3 +37,25 @@
 [07/26/2017 12:18:57][            AR_IncomingPayment] Payment means specification missing  [RCT3.VoucherNum][line: 0]
 [07/26/2017 12:18:57][     MarketingDocuments_Sync()] Payment means specification missing  [RCT3.VoucherNum][line: 0]
 [07/26/2017 12:26:50][     MarketingDocuments_Sync()] (-1) Please Fill In The Cost Centre.
+[08/10/2017 10:43:55][          AR_InvoiceCreation()] Invalid field name
+[08/10/2017 11:48:28][          AR_InvoiceCreation()] Invalid field name
+[08/10/2017 11:48:28][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[08/11/2017 09:14:39][     MarketingDocuments_Sync()] Raptor Code not matching in SAP 
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Invalid column name 'U_RAPTOR_CODE'.
+[08/16/2017 17:12:30][          ExecuteSQLQuery_DT()] Invalid column name 'U_CATER_SALES'.
+Invalid column name 'U_CATER_COGS'.
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Invalid column name 'U_RAPTOR_CODE'.
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Invalid column name 'U_CATER_SALES'.
+Invalid column name 'U_CATER_COGS'.
+[08/16/2017 17:20:54][          ExecuteSQLQuery_DT()] Invalid column name 'U_CATER_SALES'.
+Invalid column name 'U_CATER_COGS'.
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Invalid column name 'U_CATER_SALES'.
+Invalid column name 'U_CATER_COGS'.
+[08/16/2017 17:30:11][          AR_InvoiceCreation()] Invalid field name
+[08/16/2017 17:30:11][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Invalid field name
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Invalid field name
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Object reference not set to an instance of an object.
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Invalid column name 'U_CATER_SALES'.
+Invalid column name 'U_CATER_COGS'.

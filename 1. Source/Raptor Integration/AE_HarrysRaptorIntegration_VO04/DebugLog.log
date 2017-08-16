@@ -4489,3 +4489,860 @@
 [08/02/2017 11:24:34][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
 [08/02/2017 11:24:34][          AR_InvoiceCreation()] Starting Function 
 [08/02/2017 11:24:34][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/10/2017 10:28:59][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 10:28:59][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:28:59][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:29:00][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:29:00][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 10:29:00][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:29:00][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:29:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:29:01][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 10:29:24][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 10:29:26][      ConnectToTargetCompany()] Starting function
+[08/10/2017 10:29:26][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 10:29:29][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 10:29:29][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 10:29:50][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 10:43:41][                        Main()] Calling IntegrityValidation()
+[08/10/2017 10:43:42][         IntegrityValidation()] Starting Function
+[08/10/2017 10:43:42][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 10:43:48][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 10:43:54][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 10:43:55][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 10:43:55][          AR_InvoiceCreation()] Completed with ERROR
+[08/10/2017 10:43:55][          AR_InvoiceCreation()] Rollback the SAP Transaction 
+[08/10/2017 10:44:24][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 10:44:24][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:44:24][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 10:44:25][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 10:44:25][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 10:44:25][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 10:44:25][      ConnectToTargetCompany()] Starting function
+[08/10/2017 10:44:25][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 10:44:28][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 10:44:28][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 10:44:42][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 10:44:42][                        Main()] Calling IntegrityValidation()
+[08/10/2017 10:44:42][         IntegrityValidation()] Starting Function
+[08/10/2017 10:44:42][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 11:28:49][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 11:29:17][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 11:29:50][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:46:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:46:57][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 11:46:57][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 11:46:57][      ConnectToTargetCompany()] Starting function
+[08/10/2017 11:46:57][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 11:47:01][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 11:47:01][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 11:47:14][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 11:47:14][                        Main()] Calling IntegrityValidation()
+[08/10/2017 11:47:14][         IntegrityValidation()] Starting Function
+[08/10/2017 11:47:14][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 11:47:26][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 11:47:35][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 11:47:42][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 11:48:28][          AR_InvoiceCreation()] Completed with ERROR
+[08/10/2017 11:48:28][          AR_InvoiceCreation()] Rollback the SAP Transaction 
+[08/10/2017 11:48:28][     MarketingDocuments_Sync()] Completed with ERROR
+[08/10/2017 11:48:28][     MarketingDocuments_Sync()] Rollback the SAP Transaction 
+[08/10/2017 11:48:28][         IntegrityValidation()] Completed with SUCCESS 
+[08/10/2017 11:48:28][                        Main()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 11:49:27][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 11:49:27][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 11:49:27][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 11:49:27][      ConnectToTargetCompany()] Starting function
+[08/10/2017 11:49:27][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 11:49:31][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 11:49:31][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 11:49:45][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 11:49:45][                        Main()] Calling IntegrityValidation()
+[08/10/2017 11:49:45][         IntegrityValidation()] Starting Function
+[08/10/2017 11:49:45][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 11:49:49][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 11:49:49][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 11:49:53][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:06:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:06:47][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 12:06:47][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 12:06:47][      ConnectToTargetCompany()] Starting function
+[08/10/2017 12:06:47][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 12:06:51][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 12:06:51][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 12:07:04][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 12:07:04][                        Main()] Calling IntegrityValidation()
+[08/10/2017 12:07:04][         IntegrityValidation()] Starting Function
+[08/10/2017 12:07:04][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 12:07:04][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 12:07:04][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 12:07:04][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 12:07:38][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:13:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:13:09][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 12:13:09][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 12:13:09][      ConnectToTargetCompany()] Starting function
+[08/10/2017 12:13:09][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 12:13:13][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 12:13:13][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 12:13:26][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 12:13:26][                        Main()] Calling IntegrityValidation()
+[08/10/2017 12:13:26][         IntegrityValidation()] Starting Function
+[08/10/2017 12:13:26][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 12:13:26][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 12:13:26][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 12:13:26][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 12:13:26][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/10/2017 12:17:25][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/10/2017 12:17:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:17:25][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Starting function
+[08/10/2017 12:17:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/10/2017 12:17:26][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/10/2017 12:17:26][                        Main()] Calling ConnectToTargetCompany()
+[08/10/2017 12:17:26][      ConnectToTargetCompany()] Starting function
+[08/10/2017 12:17:26][      ConnectToTargetCompany()] Initializing the Company Object
+[08/10/2017 12:17:29][      ConnectToTargetCompany()] Assigning the representing database name
+[08/10/2017 12:17:29][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/10/2017 12:17:43][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/10/2017 12:17:43][                        Main()] Calling IntegrityValidation()
+[08/10/2017 12:17:43][         IntegrityValidation()] Starting Function
+[08/10/2017 12:17:43][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/10/2017 12:17:43][     MarketingDocuments_Sync()] Starting Function 
+[08/10/2017 12:17:43][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/10/2017 12:17:43][          AR_InvoiceCreation()] Starting Function 
+[08/10/2017 12:17:43][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/11/2017 00:16:51][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 00:16:51][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:16:51][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:16:52][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:16:52][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 00:16:52][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 00:16:52][      ConnectToTargetCompany()] Starting function
+[08/11/2017 00:16:52][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 00:16:56][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 00:16:56][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 00:17:10][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 00:17:10][                        Main()] Calling IntegrityValidation()
+[08/11/2017 00:17:10][         IntegrityValidation()] Starting Function
+[08/11/2017 00:17:10][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 00:17:10][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 00:17:10][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 00:17:10][          AR_InvoiceCreation()] Starting Function 
+[08/11/2017 00:17:10][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/11/2017 00:19:46][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 00:19:46][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:19:46][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:19:46][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:19:46][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 00:19:46][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:19:46][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 00:19:47][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 00:19:47][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 00:19:47][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 00:19:47][      ConnectToTargetCompany()] Starting function
+[08/11/2017 00:19:47][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 00:19:50][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 00:19:50][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 00:20:03][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 00:20:03][                        Main()] Calling IntegrityValidation()
+[08/11/2017 00:20:03][         IntegrityValidation()] Starting Function
+[08/11/2017 00:20:03][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 00:20:03][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 00:20:03][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 00:20:04][          AR_InvoiceCreation()] Starting Function 
+[08/11/2017 00:20:04][          AR_InvoiceCreation()] Attempting to Add Draft 
+[08/11/2017 08:30:29][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 08:30:29][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:30:29][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:30:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:30:30][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 08:30:30][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 08:30:30][      ConnectToTargetCompany()] Starting function
+[08/11/2017 08:30:30][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 08:30:33][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 08:30:33][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 08:30:47][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 08:30:47][                        Main()] Calling IntegrityValidation()
+[08/11/2017 08:30:47][         IntegrityValidation()] Starting Function
+[08/11/2017 08:30:47][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 08:30:47][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 08:30:47][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 08:32:25][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 08:32:25][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:32:25][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:32:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:32:26][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 08:32:26][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 08:32:26][      ConnectToTargetCompany()] Starting function
+[08/11/2017 08:32:26][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 08:32:29][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 08:32:29][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 08:32:41][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 08:32:41][                        Main()] Calling IntegrityValidation()
+[08/11/2017 08:32:41][         IntegrityValidation()] Starting Function
+[08/11/2017 08:32:41][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 08:32:41][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 08:32:41][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 08:41:58][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 08:41:58][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 08:41:58][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 08:41:58][      ConnectToTargetCompany()] Starting function
+[08/11/2017 08:41:58][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 08:42:02][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 08:42:02][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 08:42:15][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 08:42:15][                        Main()] Calling IntegrityValidation()
+[08/11/2017 08:42:15][         IntegrityValidation()] Starting Function
+[08/11/2017 08:42:15][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 08:42:15][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 08:42:15][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 09:14:08][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 09:14:08][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:14:08][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:14:09][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:14:09][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 09:14:09][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 09:14:09][      ConnectToTargetCompany()] Starting function
+[08/11/2017 09:14:09][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 09:14:13][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 09:14:13][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 09:14:26][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 09:14:26][                        Main()] Calling IntegrityValidation()
+[08/11/2017 09:14:26][         IntegrityValidation()] Starting Function
+[08/11/2017 09:14:26][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 09:14:26][     MarketingDocuments_Sync()] Starting Function 
+[08/11/2017 09:14:26][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/11/2017 09:14:35][          AR_InvoiceCreation()] Starting Function 
+[08/11/2017 09:15:06][     MarketingDocuments_Sync()] Rollback the SAP Transaction 
+[08/11/2017 09:15:44][     MarketingDocuments_Sync()] Date Time 8/11/2017 9:14 AM
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 09:24:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:24:43][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:24:44][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:24:44][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 09:24:44][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 09:24:44][      ConnectToTargetCompany()] Starting function
+[08/11/2017 09:24:44][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 09:24:47][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 09:24:47][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 09:25:01][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 09:25:01][                        Main()] Calling IntegrityValidation()
+[08/11/2017 09:25:01][         IntegrityValidation()] Starting Function
+[08/11/2017 09:25:17][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Starting function
+[08/11/2017 09:27:37][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/11/2017 09:27:37][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/11/2017 09:27:37][                        Main()] Calling ConnectToTargetCompany()
+[08/11/2017 09:27:37][      ConnectToTargetCompany()] Starting function
+[08/11/2017 09:27:37][      ConnectToTargetCompany()] Initializing the Company Object
+[08/11/2017 09:27:41][      ConnectToTargetCompany()] Assigning the representing database name
+[08/11/2017 09:27:41][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/11/2017 09:27:55][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/11/2017 09:27:55][                        Main()] Calling IntegrityValidation()
+[08/11/2017 09:27:55][         IntegrityValidation()] Starting Function
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_HSukiGroup].. OINV T0
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:40:32][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:40:32][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/14/2017 12:40:32][                        Main()] Calling ConnectToTargetCompany()
+[08/14/2017 12:40:32][      ConnectToTargetCompany()] Starting function
+[08/14/2017 12:40:32][      ConnectToTargetCompany()] Initializing the Company Object
+[08/14/2017 12:40:36][      ConnectToTargetCompany()] Assigning the representing database name
+[08/14/2017 12:40:36][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/14/2017 12:40:49][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/14/2017 12:40:49][                        Main()] Calling IntegrityValidation()
+[08/14/2017 12:40:49][         IntegrityValidation()] Starting Function
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_HSukiGroup] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_HSukiGroup] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_HSukiGroup].. OWHS T0
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_HSukiGroup].. OITB T0  INNER JOIN [UAT_HSukiGroup].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_HSukiGroup].. OINV T0
+[08/14/2017 12:41:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/14/2017 12:41:56][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:41:57][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/14/2017 12:41:57][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/14/2017 12:41:57][                        Main()] Calling ConnectToTargetCompany()
+[08/14/2017 12:41:57][      ConnectToTargetCompany()] Starting function
+[08/14/2017 12:41:57][      ConnectToTargetCompany()] Initializing the Company Object
+[08/14/2017 12:42:00][      ConnectToTargetCompany()] Assigning the representing database name
+[08/14/2017 12:42:00][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_HSukiGroup
+[08/14/2017 12:42:14][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/14/2017 12:42:14][                        Main()] Calling IntegrityValidation()
+[08/14/2017 12:42:14][         IntegrityValidation()] Starting Function
+[08/14/2017 12:46:04][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = '11JKC180717199010101 - File ID already exists in AR Invoice 10000917' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1
+[08/14/2017 12:46:04][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/14/2017 12:46:05][          ExecuteSQLQuery_DT()] Starting function
+[08/14/2017 12:46:05][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:12:24][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/16/2017 17:12:24][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:24][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:26][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:12:26][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_RIshiMura] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/16/2017 17:12:26][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:26][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_RIshiMura] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_RIshiMura].. OWHS T0
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_RIshiMura].. OITB T0  INNER JOIN [UAT_RIshiMura].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/16/2017 17:12:29][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:29][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:30][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:12:30][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_RIshiMura].. OINV T0
+[08/16/2017 17:12:30][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:12:30][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:12:30][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:12:30][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/16/2017 17:12:39][                        Main()] Calling ConnectToTargetCompany()
+[08/16/2017 17:12:40][      ConnectToTargetCompany()] Starting function
+[08/16/2017 17:12:40][      ConnectToTargetCompany()] Initializing the Company Object
+[08/16/2017 17:12:51][      ConnectToTargetCompany()] Assigning the representing database name
+[08/16/2017 17:12:51][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_RIshiMura
+[08/16/2017 17:13:45][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/16/2017 17:15:06][                        Main()] Calling IntegrityValidation()
+[08/16/2017 17:16:00][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/16/2017 17:16:00][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:00][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:00][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:16:00][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate], [OITM].[ItemCode] [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] left join [UAT_RIshiMura] ..[OITM] on [SalesTransDetails].[POSItemCode] COLLATE SQL_Latin1_General_CP850_CI_AS = [OITM].[U_RAPTOR_CODE]  where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/16/2017 17:16:00][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:00][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_RIshiMura] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_RIshiMura].. OWHS T0
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_RIshiMura].. OITB T0  INNER JOIN [UAT_RIshiMura].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_RIshiMura].. OINV T0
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:16:01][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:16:01][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/16/2017 17:16:01][                        Main()] Calling ConnectToTargetCompany()
+[08/16/2017 17:16:01][      ConnectToTargetCompany()] Starting function
+[08/16/2017 17:16:01][      ConnectToTargetCompany()] Initializing the Company Object
+[08/16/2017 17:16:04][      ConnectToTargetCompany()] Assigning the representing database name
+[08/16/2017 17:16:04][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_RIshiMura
+[08/16/2017 17:16:17][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/16/2017 17:16:17][                        Main()] Calling IntegrityValidation()
+[08/16/2017 17:20:06][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/16/2017 17:20:07][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:08][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:08][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:20:13][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate],  [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/16/2017 17:20:14][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:15][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:15][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:20:47][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_RIshiMura] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/16/2017 17:20:48][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:48][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:48][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:20:50][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_RIshiMura].. OWHS T0
+[08/16/2017 17:20:50][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:51][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:51][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:20:52][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_RIshiMura].. OITB T0  INNER JOIN [UAT_RIshiMura].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/16/2017 17:20:54][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:54][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:54][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:20:55][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_RIshiMura].. OINV T0
+[08/16/2017 17:20:56][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:20:56][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:20:56][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:20:58][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/16/2017 17:21:03][                        Main()] Calling ConnectToTargetCompany()
+[08/16/2017 17:21:04][      ConnectToTargetCompany()] Starting function
+[08/16/2017 17:21:04][      ConnectToTargetCompany()] Initializing the Company Object
+[08/16/2017 17:21:08][      ConnectToTargetCompany()] Assigning the representing database name
+[08/16/2017 17:21:08][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_RIshiMura
+[08/16/2017 17:21:21][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/16/2017 17:21:38][                        Main()] Calling IntegrityValidation()
+[08/16/2017 17:21:47][         IntegrityValidation()] Starting Function
+[08/16/2017 17:23:28][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC010817213010101
+[08/16/2017 17:25:50][     MarketingDocuments_Sync()] Starting Function 
+[08/16/2017 17:26:08][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/16/2017 17:27:34][          AR_InvoiceCreation()] Starting Function 
+[08/16/2017 17:29:40][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/16/2017 17:29:40][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:40][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:40][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:29:40][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate],  [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/16/2017 17:29:40][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:40][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_RIshiMura] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_RIshiMura].. OWHS T0
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_RIshiMura].. OITB T0  INNER JOIN [UAT_RIshiMura].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_RIshiMura].. OINV T0
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:29:41][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:29:41][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/16/2017 17:29:41][                        Main()] Calling ConnectToTargetCompany()
+[08/16/2017 17:29:41][      ConnectToTargetCompany()] Starting function
+[08/16/2017 17:29:41][      ConnectToTargetCompany()] Initializing the Company Object
+[08/16/2017 17:29:45][      ConnectToTargetCompany()] Assigning the representing database name
+[08/16/2017 17:29:45][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_RIshiMura
+[08/16/2017 17:29:58][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/16/2017 17:29:58][                        Main()] Calling IntegrityValidation()
+[08/16/2017 17:30:10][         IntegrityValidation()] Starting Function
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC010817213010101
+[08/16/2017 17:30:10][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC020817214010101
+[08/16/2017 17:30:10][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC030817215010101
+[08/16/2017 17:30:10][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC040817216010101
+[08/16/2017 17:30:10][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:10][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:10][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC050817217010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC060817218010101
+[08/16/2017 17:30:11][     MarketingDocuments_Sync()] Starting Function 
+[08/16/2017 17:30:11][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/16/2017 17:30:11][          AR_InvoiceCreation()] Starting Function 
+[08/16/2017 17:30:11][          AR_InvoiceCreation()] Completed with ERROR
+[08/16/2017 17:30:11][          AR_InvoiceCreation()] Rollback the SAP Transaction 
+[08/16/2017 17:30:11][     MarketingDocuments_Sync()] Completed with ERROR
+[08/16/2017 17:30:11][     MarketingDocuments_Sync()] Rollback the SAP Transaction 
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC170717198010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC180717199010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC190717200010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC200717201010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC210717202010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC220717203010101
+[08/16/2017 17:30:11][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:11][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:11][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC230717204010101
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Starting Function 
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Starting Function 
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Completed with ERROR
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Rollback the SAP Transaction 
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Completed with ERROR
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Rollback the SAP Transaction 
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC240717205010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC250717206010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC260717207010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC260717207010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC260717207010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC270717208010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC260717207010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC260717207010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC270717208010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC270717208010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC280717209010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC260717207010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC260717207010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC270717208010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC270717208010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC280717209010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC280717209010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC290717210010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC260717207010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC260717207010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC270717208010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC270717208010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC280717209010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC280717209010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC290717210010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC290717210010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC300717211010101
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Starting Function 
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Starting Function 
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Completed with ERROR
+[08/16/2017 17:30:12][          AR_InvoiceCreation()] Rollback the SAP Transaction 
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Completed with ERROR
+[08/16/2017 17:30:12][     MarketingDocuments_Sync()] Rollback the SAP Transaction 
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC310717212010101
+[08/16/2017 17:30:12][         IntegrityValidation()] Validation Update SQL UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC010817213010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC010817213010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC020817214010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC020817214010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC030817215010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC030817215010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC040817216010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC040817216010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC050817217010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC050817217010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC170717198010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC170717198010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC180717199010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC180717199010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC190717200010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC190717200010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC200717201010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC200717201010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC210717202010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC210717202010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC220717203010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC220717203010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC240717205010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC240717205010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC250717206010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC250717206010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC260717207010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC260717207010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC270717208010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC270717208010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC280717209010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC280717209010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC290717210010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC290717210010101' and [POSSyncCompletionStatus]=1UPDATE [SalesTransHeader]SET [SAPSyncFileStatus] = 'FAIL' ,[SAPSyncErrMsg] = 'Credit Cards are not mapped in SAP B1 for File ID 11JKC310717212010101' , [ERRDateTime] = GETDATE() WHERE [FileID] = '11JKC310717212010101' and [POSSyncCompletionStatus]=1
+[08/16/2017 17:30:12][         IntegrityValidation()] Calling Function ExecuteSQLQuery_DT() 
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:12][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:12][         IntegrityValidation()] Completed with SUCCESS 
+[08/16/2017 17:30:12][                        Main()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Fetching INT DB SalesTransHeader Query : SELECT [SeqID] ,[FileID] ,[Outlet] , CONVERT( NVARCHAR(20), [DocDate],112) [DocDate],[TotalGrossAmt],[SvcCharge],[GST],[Rounding],[Excess],[Tips],[Covers],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS' 
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Fetching INT DB SalesTransDetails Query : SELECT [SeqID],[FileID],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate],  [POSItemCode],[Outlet],[Qty],[LineTotal],[DiscCode],[Disc],[SalesCategory],[POSSyncCompletionStatus]  FROM [dbo].[SalesTransDetails] where [FileID] in (SELECT [FileID] FROM [dbo].[SalesTransHeader] where [POSSyncCompletionStatus] = 1 and isnull([SAPSyncFileStatus],'')  <> 'SUCCESS') 
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Payment Query : SELECT  [SalesOutlet],CONVERT( NVARCHAR(20), [BusinessDate],112) [BusinessDate] ,T0.[PaymentCode],T1.CardName  ,[PaymentAmt],[BatchCode] ,[POSSyncCompletionStatus] ,[FileID]   FROM [CollectionDetails] T0 left join [UAT_RIshiMura] ..[ocrc] T1 ON T0.PaymentCode COLLATE SQL_Latin1_General_CP850_CI_AS = T1.CreditCard 
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Warehouse : SELECT T0.[WhsCode], T0.[WhsName] FROM [UAT_RIshiMura].. OWHS T0
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Item Group : SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [UAT_RIshiMura].. OITB T0  INNER JOIN [UAT_RIshiMura].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with ERROR
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Item Group : SELECT T0.[NumAtCard], T0.[DocNum] FROM [UAT_RIshiMura].. OINV T0
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Calling ExecuteSQLQuery_DT()
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Starting function
+[08/16/2017 17:30:43][          ExecuteSQLQuery_DT()] Completed with SUCCESS
+[08/16/2017 17:30:43][      GetSystemIntializeInfo()] Completed with SUCCESS
+[08/16/2017 17:30:43][                        Main()] Calling ConnectToTargetCompany()
+[08/16/2017 17:30:43][      ConnectToTargetCompany()] Starting function
+[08/16/2017 17:30:43][      ConnectToTargetCompany()] Initializing the Company Object
+[08/16/2017 17:30:47][      ConnectToTargetCompany()] Assigning the representing database name
+[08/16/2017 17:30:47][      ConnectToTargetCompany()] Connecting to the Company Database.  UAT_RIshiMura
+[08/16/2017 17:31:00][      ConnectToTargetCompany()] Completed with SUCCESS
+[08/16/2017 17:31:00][                        Main()] Calling IntegrityValidation()
+[08/16/2017 17:31:00][         IntegrityValidation()] Starting Function
+[08/16/2017 17:31:09][         IntegrityValidation()] Calling Function AR_InvoiceCreation() TransID 11JKC010817213010101
+[08/16/2017 17:31:52][     MarketingDocuments_Sync()] Starting Function 
+[08/16/2017 17:32:02][     MarketingDocuments_Sync()] Calling Funcion AR_InvoiceCreation() : AR Invoice DocEntry 
+[08/16/2017 17:32:49][          AR_InvoiceCreation()] Starting Function 
