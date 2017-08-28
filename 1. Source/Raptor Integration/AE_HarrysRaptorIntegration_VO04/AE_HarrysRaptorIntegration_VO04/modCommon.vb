@@ -138,16 +138,15 @@ Module modCommon
                 '''''---------- checking FileID exists or not
                 ''''' -------------------------------------------
 
-                'oDV_ARInvoice.RowFilter = "NumAtCard='" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
-                'If oDV_ARInvoice.Count > 0 Then
-                '    sErrDisplay = oDT_Distinct.Rows(imjs).Item("FileID") & " - File ID already exists in AR Invoice " & oDV_ARInvoice.Item(0)("DocNum")
-                '    oDT_InvoiceStatus.Rows.Add(oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim, _
-                '                                                                              "", "FAIL", _
-                '                                                   sErrDisplay, "", Now.ToShortTimeString, "", "", oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim)
-                '    fError = True
-                '    GoTo ErrorDis
-                'End If
-
+                oDV_ARInvoice.RowFilter = "NumAtCard='" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
+                If oDV_ARInvoice.Count > 0 Then
+                    sErrDisplay = oDT_Distinct.Rows(imjs).Item("FileID") & " - File ID already exists in AR Invoice " & oDV_ARInvoice.Item(0)("DocNum")
+                    oDT_InvoiceStatus.Rows.Add(oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim, _
+                                                                                              "", "FAIL", _
+                                                                   sErrDisplay, "", Now.ToShortTimeString, "", "", oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim)
+                    fError = True
+                    GoTo ErrorDis
+                End If
 
                 oDV_InvoiceInform.RowFilter = "FileID='" & oDT_Distinct.Rows(imjs).Item("FileID") & "'"
                 ''''''''''--------------------------------------
@@ -225,7 +224,7 @@ ErrorDis:
                     If sSQL.Length > 1 Then
                         If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Validation Update SQL " & sSQL, sFuncName)
                         If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling Function ExecuteSQLQuery_DT() ", sFuncName)
-                        Console.WriteLine("Calling Function ExecuteSQLQuery_DT()")
+                        ''  Console.WriteLine("Calling Function ExecuteSQLQuery_DT()")
                         If ExecuteSQLQuery_DT(P_sConString, sSQL, sErrDesc) <> RTN_SUCCESS Then Throw New ArgumentException(sErrDesc)
                     End If
 
@@ -233,10 +232,7 @@ ErrorDis:
                     oDT_InvoiceStatus.Clear()
                     oDV_InvoiceInform.RowFilter = "FileID = '" & oDT_Distinct.Rows(imjs).Item("FileID") & "'"
                     MarketingDocuments_Sync(oDV_InvoiceInform, oDV_InvoiceDetails, oDV_PaymentsInform, p_oCompany, oDT_InvoiceStatus, sErrDesc)
-
                 End If
-
-
             Next
 
             Console.WriteLine("Completed with SUCCESS", sFuncName)
@@ -612,8 +608,9 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
             oDT_Warehouse = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
 
-
-            sQuery = "SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] FROM [" & p_oCompDef.p_sDataBaseName & "].. OITB T0  INNER JOIN [" & p_oCompDef.p_sDataBaseName & "].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]"
+            sQuery = "SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] , T0.[ItmsGrpNam], " & _
+            " U_SpoilsCOGS 'HSPOI', U_FlushCOGS 'HFLUS' , U_DutyCOGS 'HDUTY',   U_MktngCOGS 'HMKTN' , U_BOHKiTUse 'BOHKITUSE', U_MNGRRecovery 'MNGRRECOVERY', U_RND 'RND' ,  U_LnDTraining 'LNDTRAINING', U_LNDAUDIT 'LNDAUDIT' " & _
+"FROM [" & p_oCompDef.p_sDataBaseName & "].. OITB T0  INNER JOIN [" & p_oCompDef.p_sDataBaseName & "].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]"
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Item Group : " & sQuery, sFuncName)
 
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)

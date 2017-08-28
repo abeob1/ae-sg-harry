@@ -25,6 +25,7 @@
             'Getting the Parameter Values from App Cofig File
             Console.WriteLine("Getting the Prerequest Information ", sFuncName)
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling GetSystemIntializeInfo()", sFuncName)
+
             If GetSystemIntializeInfo(p_oCompDef, sErrDesc) <> RTN_SUCCESS Then Throw New ArgumentException(sErrDesc)
 
             If Not oDT_InvoiceHeader Is Nothing And oDT_InvoiceHeader.Rows.Count > 0 Then

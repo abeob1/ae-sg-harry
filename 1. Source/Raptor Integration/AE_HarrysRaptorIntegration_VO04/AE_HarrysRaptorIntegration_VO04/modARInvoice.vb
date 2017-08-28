@@ -97,115 +97,138 @@
                 oARInvoice.UserFields.Fields.Item("U_Outlet").Value = sWhsCode
             End If
             oARInvoice.UserFields.Fields.Item("U_Covers").Value = oDVARInvoice.Item(0).Row("Covers").ToString.Trim
-            oDT_Distinct = oDVARInvoiceLine.ToTable(True, "POSCode")
+            ''oDT_Distinct = oDVARInvoiceLine.ToTable(True, "POSCode")
             ''  oDT_Distinct = oDVARInvoiceLine.Table.DefaultView.ToTable(True, "POSItemCode")
-            For Each oDr As DataRow In oDT_Distinct.Rows
-                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("POSItemCode  " & oDr("POSCode").ToString.Trim, sFuncName)
-                oDVARInvoiceLine.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "'"
-                oDVTmp.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "' and FileID ='" & sFileID & "'"
-                oDTtmp = New DataTable
-                oDTtmp = oDVTmp.ToTable
-                If oDTtmp.Rows.Count > 0 Then
-                    DQTY = Convert.ToDecimal(oDTtmp.Compute("sum(Qty)", String.Empty).ToString)
-                    dPrice = Convert.ToDecimal(oDTtmp.Compute("sum(LineTotal)", String.Empty).ToString)
-                Else
-                    sErrDesc = "Raptor Code not matching in SAP " & oDr("POSItemCode").ToString.Trim
+            oDT_Distinct = oDVARInvoiceLine.ToTable
+            ''  For Each oDr As DataRow In oDT_Distinct.Rows
+            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("POSItemCode  " & oDVARInvoice.Item(0).Row("POSCode").ToString.Trim, sFuncName)
+            ''   oDVARInvoiceLine.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "'"
+            ''  oDVTmp.RowFilter = "POSCode='" & oDr("POSCode").ToString.Trim & "' and FileID ='" & sFileID & "'"
+            ''  oDTtmp = New DataTable
+            ''  oDTtmp = oDVTmp.ToTable
+            ''If oDTtmp.Rows.Count > 0 Then
+            ''    DQTY = Convert.ToDecimal(oDTtmp.Compute("sum(Qty)", String.Empty).ToString)
+            ''    dPrice = Convert.ToDecimal(oDTtmp.Compute("sum(LineTotal)", String.Empty).ToString)
+            ''Else
+            ''    sErrDesc = "Raptor Code not matching in SAP " & oDr("POSItemCode").ToString.Trim
+            ''    Return RTN_ERROR
+            ''End If
+
+            For Each dvr As DataRowView In oDVARInvoiceLine
+                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("SAPItemCode  " & dvr("POSItemCode").ToString.Trim & "  -  " & "  Qty " & DQTY & "  -  " & " Unit Price " & dPrice, sFuncName)
+                oARInvoice.Lines.ItemCode = dvr("POSItemCode").ToString.Trim
+                oARInvoice.Lines.Quantity = DQTY  ''Math.Abs(CDbl(dvr("Qty").ToString.Trim))
+                sWhsCodeL = Left(dvr("Outlet").ToString.Trim, 5)
+                oDT_Warehouse.DefaultView.RowFilter = "WhsCode='" & sWhsCodeL & "'"
+                If oDT_Warehouse.DefaultView.Count = 0 Then
+                    sErrDesc = "No matching records found in OWHS table " & sWhsCodeL
                     Return RTN_ERROR
                 End If
-
-                For Each dvr As DataRowView In oDVARInvoiceLine
-                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("SAPItemCode  " & dvr("POSItemCode").ToString.Trim & "  -  " & "  Qty " & DQTY & "  -  " & " Unit Price " & dPrice, sFuncName)
-                    oARInvoice.Lines.ItemCode = dvr("POSItemCode").ToString.Trim
-                    oARInvoice.Lines.Quantity = DQTY  ''Math.Abs(CDbl(dvr("Qty").ToString.Trim))
-                    sWhsCodeL = Left(dvr("Outlet").ToString.Trim, 5)
-                    oDT_Warehouse.DefaultView.RowFilter = "WhsCode='" & sWhsCodeL & "'"
-                    If oDT_Warehouse.DefaultView.Count = 0 Then
-                        sErrDesc = "No matching records found in OWHS table " & sWhsCodeL
-                        Return RTN_ERROR
-                    End If
-                    oARInvoice.Lines.LineTotal = dPrice  ''CDbl(dvr("LineTotal").ToString.Trim)
-                    ''   oARInvoice.Lines.UnitPrice = CDbl(dvr("DPriceBefDi").ToString.Trim) / 1.07
-                    '' oARInvoice.Lines.TaxTotal = CDbl(dvr("DTotalGST").ToString.Trim)
-                    oARInvoice.Lines.CostingCode = sWhsCodeL
-                    oARInvoice.Lines.COGSCostingCode = sWhsCodeL
-                    oARInvoice.Lines.WarehouseCode = sWhsCodeL
-                    ''   If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("DiscCode " & dvr("DiscCode").ToString.Trim, sFuncName)
-                    oARInvoice.Lines.UserFields.Fields.Item("U_DiscCode").Value = dvr("DiscCode").ToString.Trim
-                    Select Case dvr("SalesCategory").ToString.Trim.ToUpper
-                        Case "C"
-                            oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
-                            If oDVItemGroup.Count > 0 Then
-                                If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_SALES").ToString) Then
-                                    oARInvoice.Lines.AccountCode = oDVItemGroup.Item(0)("U_CATER_SALES").ToString
-                                End If
-                                If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_COGS").ToString) Then
-                                    oARInvoice.Lines.COGSAccountCode = oDVItemGroup.Item(0)("U_CATER_COGS").ToString
-                                End If
-
+                ''  for HSPOI, HFLUS, HDUTY, HMKTN, BOHKITUSE, MNGRRECOVERY, RND, LNDTRAINING, LNDAUDIT
+                 
+                Select Case dvr("DiscCode").ToString.Trim
+                    Case "HMKTG", "HSPOI", "HFLUS", "HDUTY", "HMKTN", "BOHKITUSE", "MNGRRECOVERY", "RND", "LNDTRAINING", "LNDAUDIT"
+                        oARInvoice.Lines.LineTotal = 0
+                        oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
+                        If oDVItemGroup.Count > 0 Then
+                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("DiscCode  " & dvr("DiscCode").ToString.Trim, sFuncName)
+                            If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)(dvr("DiscCode").ToString.Trim).ToString) Then
+                                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("COGSAccountCode  " & oDVItemGroup.Item(0)(dvr("DiscCode").ToString.Trim).ToString, sFuncName)
+                                oARInvoice.Lines.COGSAccountCode = oDVItemGroup.Item(0)(dvr("DiscCode").ToString.Trim).ToString
+                            Else
+                                sErrDesc = "COGS Account not found in the ItemGroup " & oDVItemGroup.Item(0)("ItmsGrpNam").ToString & " for this ItemCode " & dvr("POSItemCode").ToString.Trim
+                                Return RTN_ERROR
                             End If
-                        Case "X"
+                        End If
+                    Case Else
+                        oARInvoice.Lines.LineTotal = dPrice
+                End Select
+
+                ''CDbl(dvr("LineTotal").ToString.Trim)
+                ''   oARInvoice.Lines.UnitPrice = CDbl(dvr("DPriceBefDi").ToString.Trim) / 1.07
+                '' oARInvoice.Lines.TaxTotal = CDbl(dvr("DTotalGST").ToString.Trim)
+                oARInvoice.Lines.CostingCode = sWhsCodeL
+                oARInvoice.Lines.COGSCostingCode = sWhsCodeL
+                oARInvoice.Lines.WarehouseCode = sWhsCodeL
+                ''   If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("DiscCode " & dvr("DiscCode").ToString.Trim, sFuncName)
+                oARInvoice.Lines.UserFields.Fields.Item("U_DiscCode").Value = dvr("DiscCode").ToString.Trim
+                Select Case dvr("SalesCategory").ToString.Trim.ToUpper
+                    Case "C"
+                        oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
+                        If oDVItemGroup.Count > 0 Then
+                            ''  If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_SALES").ToString) Then
+                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("SalesCategory  " & dvr("SalesCategory").ToString.Trim.ToUpper, sFuncName)
+                            oARInvoice.Lines.AccountCode = oDVItemGroup.Item(0)("U_CATER_SALES").ToString
+                            ''End If
+                            ''If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_COGS").ToString) Then
+                            oARInvoice.Lines.COGSAccountCode = oDVItemGroup.Item(0)("U_CATER_COGS").ToString
+                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug(oDVItemGroup.Item(0)("U_CATER_SALES").ToString & "   -   " & oDVItemGroup.Item(0)("U_CATER_COGS").ToString, sFuncName)
+                            ''  End If
+
+                        End If
+                    Case "X"
+
+                    Case Else
+
+                        If Left(dvr("SalesCategory").ToString.Trim.ToUpper, 1) = "X" Then
+                            sprojectcode = Right(dvr("SalesCategory").ToString.Trim, dvr("SalesCategory").ToString.Trim.Length - 1)
+                            oARInvoice.Lines.ProjectCode = sprojectcode
+
+                        ElseIf Left(dvr("SalesCategory").ToString.Trim.ToUpper, 1) = "C" Then
+
+                            sprojectcode = Right(dvr("SalesCategory").ToString.Trim, dvr("SalesCategory").ToString.Trim.Length - 1)
+                            oARInvoice.Lines.ProjectCode = sprojectcode
+                            oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
+                            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("SalesCategory  " & dvr("SalesCategory").ToString.Trim.ToUpper, sFuncName)
+                            If oDVItemGroup.Count > 0 Then
+                                ''  If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_SALES").ToString) Then
+                                oARInvoice.Lines.AccountCode = oDVItemGroup.Item(0)("U_CATER_SALES").ToString
+                                ''End If
+                                '' If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_COGS").ToString) Then
+                                oARInvoice.Lines.COGSAccountCode = oDVItemGroup.Item(0)("U_CATER_COGS").ToString
+                                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug(oDVItemGroup.Item(0)("U_CATER_SALES").ToString & "   -   " & oDVItemGroup.Item(0)("U_CATER_COGS").ToString, sFuncName)
+                                ''End If
+                            End If
+                        End If
+                End Select
+                oARInvoice.Lines.Add()
+
+                'For Each odvr As DataRowView In oDVTmp
+                If Not String.IsNullOrEmpty(dvr("DiscCode").ToString.Trim) Then
+                    oARInvoice.Lines.ItemCode = p_oCompDef.p_sDiscountItem
+                    Select Case dvr("DiscCode").ToString.Trim
+                        ''   Case "HMKTG", "HSPOI", "HFLUS", "HDUTY", "HMKTN", "BOHKITUSE", "MNGRRECOVERY", "RND", "LNDTRAINING", "LNDAUDIT"
+                        ''Case "HMKTN"
+                        ''    oARInvoice.Lines.Quantity = 1
+                        ''    oARInvoice.Lines.UnitPrice = 0
+                        ''    oARInvoice.Lines.AccountCode = "500034"
+                        ''Case "HSPOI"
+                        ''    oARInvoice.Lines.Quantity = 1
+                        ''    oARInvoice.Lines.UnitPrice = 0
+                        ''    oARInvoice.Lines.AccountCode = "500014"
+                        ''Case "HFLUS"
+                        ''    oARInvoice.Lines.Quantity = 1
+                        ''    oARInvoice.Lines.UnitPrice = 0
+                        ''    oARInvoice.Lines.AccountCode = "500028"
+                        ''Case "HENTM"
+                        ''    oARInvoice.Lines.Quantity = 1
+                        ''    oARInvoice.Lines.UnitPrice = CDbl(dvr("Disc").ToString.Trim)
+                        ''    oARInvoice.Lines.AccountCode = "400111"
+                        Case "HSPOI", "HFLUS", "HDUTY", "HMKTN", "BOHKITUSE", "MNGRRECOVERY", "RND", "LNDTRAINING", "LNDAUDIT"
 
                         Case Else
-
-                            If Left(dvr("SalesCategory").ToString.Trim.ToUpper, 1) = "X" Then
-                                sprojectcode = Right(dvr("SalesCategory").ToString.Trim, dvr("SalesCategory").ToString.Trim.Length - 1)
-                                oARInvoice.Lines.ProjectCode = sprojectcode
-
-                            ElseIf Left(dvr("SalesCategory").ToString.Trim.ToUpper, 1) = "C" Then
-
-                                sprojectcode = Right(dvr("SalesCategory").ToString.Trim, dvr("SalesCategory").ToString.Trim.Length - 1)
-                                oARInvoice.Lines.ProjectCode = sprojectcode
-                                oDVItemGroup.RowFilter = "ItemCode='" & dvr("POSItemCode").ToString.Trim & "'"
-                                If oDVItemGroup.Count > 0 Then
-                                    If Not String.IsNullOrEmpty(oDVItemGroup.Item(0)("U_CATER_SALES").ToString) Then
-                                        oARInvoice.Lines.AccountCode = oDVItemGroup.Item(0)("U_CATER_SALES").ToString
-                                    End If
-                                End If
-                            End If
-                    End Select
-                    oARInvoice.Lines.Add()
-
-                    For Each odvr As DataRowView In oDVTmp
-                        If Not String.IsNullOrEmpty(odvr("DiscCode").ToString.Trim) Then
-                            oARInvoice.Lines.ItemCode = p_oCompDef.p_sDiscountItem
-                            Select Case odvr("DiscCode").ToString.Trim
-
-                                Case "HMKTG"
-                                    oARInvoice.Lines.Quantity = 1
-                                    oARInvoice.Lines.UnitPrice = 0
-                                    oARInvoice.Lines.AccountCode = "500034"
-                                Case "HSPOI"
-                                    oARInvoice.Lines.Quantity = 1
-                                    oARInvoice.Lines.UnitPrice = 0
-                                    oARInvoice.Lines.AccountCode = "500014"
-                                Case "HFLUS"
-                                    oARInvoice.Lines.Quantity = 1
-                                    oARInvoice.Lines.UnitPrice = 0
-                                    oARInvoice.Lines.AccountCode = "500028"
-                                Case "HENTM"
-                                    oARInvoice.Lines.Quantity = 1
-                                    oARInvoice.Lines.UnitPrice = CDbl(dvr("Disc").ToString.Trim)
-                                    oARInvoice.Lines.AccountCode = "400111"
-                                Case "HDUTY"
-                                    oARInvoice.Lines.Quantity = 1
-                                    oARInvoice.Lines.UnitPrice = 0
-                                    oARInvoice.Lines.AccountCode = "620033"
-                                Case Else
-                                    oARInvoice.Lines.Quantity = -1
-                                    oARInvoice.Lines.UnitPrice = CDbl(odvr("Disc").ToString.Trim)
-
-                            End Select
-
+                            oARInvoice.Lines.Quantity = -1
+                            oARInvoice.Lines.UnitPrice = CDbl(dvr("Disc").ToString.Trim)
                             oARInvoice.Lines.WarehouseCode = sWhsCodeL
                             oARInvoice.Lines.CostingCode = sWhsCodeL
                             oARInvoice.Lines.COGSCostingCode = sWhsCodeL
                             oARInvoice.Lines.Add()
-
-                        End If
-                    Next
-                    Exit For
-                Next
+                    End Select
+                End If
+                'Next
+                ''  Exit For
             Next
+            ''  Next
 
             If CDbl(oDVARInvoice.Item(0).Row("Tips").ToString.Trim) <> 0.0 Then
                 oARInvoice.Lines.ItemCode = p_oCompDef.p_szStips      'dvr("POSItemCode").ToString.Trim
@@ -350,19 +373,19 @@
             oARInvoice = Nothing
             Return RTN_ERROR
         Finally
-            'If Not String.IsNullOrEmpty(SARDraft) Then
-            '    If oARInvoice.GetByKey(SARDraft) Then
-            '        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Remove te Draft ", sFuncName)
-            '        lRetCode = oARInvoice.Remove()
-            '        If lRetCode <> 0 Then
-            '            sErrDesc = oCompany.GetLastErrorDescription
-            '            Call WriteToLogFile(sErrDesc, sFuncName)
-            '            If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with ERROR ", sFuncName)
-            '            ''System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
-            '        End If
-            '        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with SUCCESS", sFuncName)
-            '    End If
-            'End If
+            If Not String.IsNullOrEmpty(SARDraft) Then
+                If oARInvoice.GetByKey(SARDraft) Then
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Attempting to Remove te Draft ", sFuncName)
+                    lRetCode = oARInvoice.Remove()
+                    If lRetCode <> 0 Then
+                        sErrDesc = oCompany.GetLastErrorDescription
+                        Call WriteToLogFile(sErrDesc, sFuncName)
+                        If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with ERROR ", sFuncName)
+                        ''System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
+                    End If
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Completed with SUCCESS", sFuncName)
+                End If
+            End If
             System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice)
             System.Runtime.InteropServices.Marshal.ReleaseComObject(oARInvoice_Doc)
             oARInvoice = Nothing
@@ -558,7 +581,7 @@
         End Try
     End Function
 
-   
+
 
     Function AR_Invoice_Cancel(ByRef oDICompany As SAPbobsCOM.Company, _
                                ByRef sInvoice As String, ByVal dDate As Date, ByVal spostdate As String, ByRef sErrDesc As String) As Long
@@ -654,13 +677,15 @@
         Dim oRS As SAPbobsCOM.Recordset = oDICompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
         Dim sVatGroup As String = String.Empty
         Dim sDocEntry As String = String.Empty
+        Dim sProject As String = String.Empty
+        Dim sGLAccount As String = String.Empty
 
         Try
 
             sFuncName = "Update_Draft()"
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Starting function", sFuncName)
             sDocEntry = oDraft.DocEntry
-            sQuery = "select T0.[ItemCode],T0.[Project],T0.[CogsAcct],T0.[WhsCode],T0.[LineNum],T0.[TreeType] from DRF1 T0 where DocEntry='" & sDocEntry & "'"
+            sQuery = "select T0.[ItemCode],T0.[Project],T0.[CogsAcct],T0.[WhsCode],T0.[LineNum],T0.[TreeType], T0.[AcctCode] from DRF1 T0 where DocEntry='" & sDocEntry & "'"
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Executing the Query, Query String : " & sQuery, sFuncName)
             oRS.DoQuery(sQuery)
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ConvertRecordset()", sFuncName)
@@ -686,7 +711,10 @@
             For IDraftRow As Integer = 0 To oDTDraftDetails.Rows.Count - 1
 
                 sCOGSAcctCode = oDTDraftDetails.Rows.Item(IDraftRow)("CogsAcct").ToString().Trim()
+                sProject = oDTDraftDetails.Rows.Item(IDraftRow)("Project").ToString().Trim()
+                sGLAccount = oDTDraftDetails.Rows.Item(IDraftRow)("AcctCode").ToString().Trim()
 
+                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Project Code : " & sProject & "  sCOGSAcctCode " & sCOGSAcctCode & " IDraftRow " & IDraftRow, sFuncName)
                 sQuery = " WITH BOM (Code, Level, TreeType) AS ( SELECT T0.Code, 0 as Level, T2.TreeType  FROM dbo.OITT T0 WITH(NOLOCK) inner join OITM T2 WITH(NOLOCK) on T0.Code = T2.ItemCode " & _
                         " WHERE T0.Code = '" & oDTDraftDetails.Rows.Item(IDraftRow)("ItemCode").ToString().Trim() & "' UNION ALL   SELECT T1.Code , Level +1 , T2.TreeType   FROM " & _
                         " dbo.ITT1 AS T1 WITH(NOLOCK) inner join OITM T2 WITH(NOLOCK) on T1.Code = T2.ItemCode JOIN BOM ON T1.Father = BOM.Code AND BOM.TreeType ='S' ) " & _
@@ -707,11 +735,15 @@
                 For iRowCount As Integer = IDraftRow + 1 To IDraftRow + iCount
 
                     oDraft.Lines.SetCurrentLine(iRowCount)
+                    If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Project Code : " & sProject & "  sCOGSAcctCode " & sCOGSAcctCode & " IDraftRow " & IDraftRow, sFuncName)
                     oDraft.Lines.WarehouseCode = sWhsCode
                     oDraft.Lines.COGSAccountCode = sCOGSAcctCode
                     oDraft.Lines.COGSCostingCode = sWhsCode
                     oDraft.Lines.CostingCode = sWhsCode
-                    ' oDraft.Lines.ProjectCode = sProjectCode
+                    oDraft.Lines.ProjectCode = sProject
+                    If Not String.IsNullOrEmpty(sProject) Then
+                        oDraft.Lines.AccountCode = sGLAccount
+                    End If
                     'oDraftAftUpdate.Lines.Add()
                 Next
                 IDraftRow = IDraftRow + iCount
