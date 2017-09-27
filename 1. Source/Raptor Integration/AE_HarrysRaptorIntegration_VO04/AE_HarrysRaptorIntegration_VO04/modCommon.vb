@@ -110,11 +110,13 @@ Module modCommon
         Dim sSQL As String = String.Empty
         Dim fError As Boolean = False
         Dim sItemCode As String = String.Empty
+        Dim orset As SAPbobsCOM.Recordset = Nothing
 
         Try
             sFuncName = "IntegrityValidation()"
             '  Console.WriteLine("Starting Function", sFuncName)
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Starting Function", sFuncName)
+            orset = oDICompany.GetBusinessObject(SAPbobsCOM.BoObjectTypes.BoRecordset)
 
             oDT_InvoiceStatus.Columns.Add("HID", GetType(String))
             oDT_InvoiceStatus.Columns.Add("LItem", GetType(String))
@@ -137,9 +139,11 @@ Module modCommon
                 ''''''''''--------------------------------------
                 '''''---------- checking FileID exists or not
                 ''''' -------------------------------------------
-
-                oDV_ARInvoice.RowFilter = "NumAtCard='" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
-                If oDV_ARInvoice.Count > 0 Then
+                sQuery = "SELECT rtrim(ltrim(T0.[NumAtCard])) [NumAtCard], T0.[DocNum] FROM OINV T0 where NumAtCard = '" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
+                If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("NumAtCart " & sQuery, sFuncName)
+                orset.DoQuery(sQuery)
+                ''    oDV_ARInvoice.RowFilter = "NumAtCard='" & oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim() & "'"
+                If orset.RecordCount > 0 Then
                     sErrDisplay = oDT_Distinct.Rows(imjs).Item("FileID") & " - File ID already exists in AR Invoice " & oDV_ARInvoice.Item(0)("DocNum")
                     oDT_InvoiceStatus.Rows.Add(oDT_Distinct.Rows(imjs).Item("FileID").ToString.Trim, _
                                                                                               "", "FAIL", _
@@ -607,7 +611,7 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)
             oDT_Warehouse = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
-
+            '' ''  for HSPOI, HFLUS, HDUTY, HMKTN, BOHKITUSE, MNGRRECOVERY, RND, LNDTRAINING, LNDAUDIT
             sQuery = "SELECT T1.[ItemCode], T0.[U_CATER_SALES], T0.[U_CATER_COGS] , T0.[ItmsGrpNam], " & _
             " U_SpoilsCOGS 'HSPOI', U_FlushCOGS 'HFLUS' , U_DutyCOGS 'HDUTY',   U_MktngCOGS 'HMKTN' , U_BOHKiTUse 'BOHKITUSE', U_MNGRRecovery 'MNGRRECOVERY', U_RND 'RND' ,  U_LnDTraining 'LNDTRAINING', U_LNDAUDIT 'LNDAUDIT' " & _
 "FROM [" & p_oCompDef.p_sDataBaseName & "].. OITB T0  INNER JOIN [" & p_oCompDef.p_sDataBaseName & "].. OITM T1 ON T0.[ItmsGrpCod] = T1.[ItmsGrpCod]"
@@ -618,7 +622,7 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
             oDT_ItemGroup = ExecuteSQLQuery_DT(P_sConString, sQuery)
 
 
-            sQuery = "SELECT T0.[NumAtCard], T0.[DocNum] FROM [" & p_oCompDef.p_sDataBaseName & "].. OINV T0"
+            sQuery = "SELECT rtrim(ltrim(T0.[NumAtCard])) [NumAtCard], T0.[DocNum] FROM [" & p_oCompDef.p_sDataBaseName & "].. OINV T0"
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Item Group : " & sQuery, sFuncName)
 
             If p_iDebugMode = DEBUG_ON Then Call WriteToLogFile_Debug("Calling ExecuteSQLQuery_DT()", sFuncName)

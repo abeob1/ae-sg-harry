@@ -31,7 +31,7 @@
             oIncomingPayment.DocDate = dIncomeDate
             oIncomingPayment.DueDate = dIncomeDate
             oIncomingPayment.TaxDate = dIncomeDate
-
+            oIncomingPayment.UserFields.Fields.Item("U_WHSCode").Value = sWhsCode
             ''  oIncomingPayment.CounterReference = Right(oDVPayment.Item(0).Row("POSTxNo").ToString.Trim, 8)
 
             If sDocEntry <> "" Then
