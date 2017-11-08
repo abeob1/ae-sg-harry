@@ -10,3 +10,9 @@ E:\Abeo Projects\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_
 E:\Abeo Projects\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.exe
 E:\Abeo Projects\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.xml
 E:\Abeo Projects\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\bin\Debug\AE_HarrysRaptorIntegration_VO04.exe.config
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\Interop.SAPbobsCOM.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.vbproj.ResolveComReference.cache
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.exe
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.xml
+E:\Application\Projects\SVN\Harrys\1. Source\Raptor Integration\AE_HarrysRaptorIntegration_VO04\AE_HarrysRaptorIntegration_VO04\obj\x86\Debug\AE_HarrysRaptorIntegration_VO04.pdb
