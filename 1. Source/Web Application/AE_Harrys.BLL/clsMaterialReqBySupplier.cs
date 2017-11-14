@@ -148,7 +148,7 @@ namespace AE_Harrys.BLL
                                 if (p_iDebugMode == DEBUG_ON) oLog.WriteToLogFile_Debug("Calling CopyPurReqToPurchaseQuot()", sFuncName);
 
                                 if (oCopyDocument.PurReqToPurchaseQuot(oDSRequestData, SAPbobsCOM.BoObjectTypes.oPurchaseRequest
-                                                        , Convert.ToInt16(sPurReqDocEntry.Tables[0].Rows[0][0].ToString()), SAPbobsCOM.BoObjectTypes.oPurchaseQuotations
+                                                        , Convert.ToInt32(sPurReqDocEntry.Tables[0].Rows[0][0].ToString()), SAPbobsCOM.BoObjectTypes.oPurchaseQuotations
                                                         , oDICompany, sConnString, sErrDesc) != "SUCCESS")
 
                                     throw new ArgumentException(sErrDesc);

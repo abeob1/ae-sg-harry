@@ -82,3 +82,10 @@ E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.DAL\bin\Debug\AE_Har
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.csprojResolveAssemblyReference.cache
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.dll
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\bin\Debug\AE_Harrys.DAL.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\bin\Debug\AE_Harrys.DAL.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\bin\Debug\AE_Harrys.Common.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\bin\Debug\AE_Harrys.Common.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.csprojResolveAssemblyReference.cache
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.DAL\obj\Debug\AE_Harrys.DAL.pdb

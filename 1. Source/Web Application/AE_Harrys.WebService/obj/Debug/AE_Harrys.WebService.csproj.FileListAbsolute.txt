@@ -176,3 +176,17 @@ E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csproj.ResolveComReference.cache
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.dll
 E:\Abeo Projects\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.WebService.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.WebService.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.BLL.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.Common.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\Interop.SAPbobsCOM.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.DAL.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.BLL.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.Common.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\bin\AE_Harrys.DAL.pdb
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csprojResolveAssemblyReference.cache
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\Interop.SAPbobsCOM.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.csproj.ResolveComReference.cache
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.dll
+E:\Application\Projects\SVN\Harrys\1. Source\Web Application\AE_Harrys.WebService\obj\Debug\AE_Harrys.WebService.pdb
