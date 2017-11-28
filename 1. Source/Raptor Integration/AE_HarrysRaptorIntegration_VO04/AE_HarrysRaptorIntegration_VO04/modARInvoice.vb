@@ -135,9 +135,10 @@
                 oARInvoice.Lines.COGSCostingCode = sWhsCodeL
                 oARInvoice.Lines.WarehouseCode = sWhsCodeL
                 oARInvoice.Lines.UserFields.Fields.Item("U_DiscCode").Value = dvr("DiscCode").ToString.Trim ''Outlet
-                If Not String.IsNullOrEmpty(dvr("DiscCode").ToString.Trim) Then
-                    oARInvoice.Lines.UserFields.Fields.Item("U_DiscItem").Value = dvr("POSItemCode").ToString.Trim ''Outlet
-                End If
+                '' Done changes on 28-nov-2017
+                ''If Not String.IsNullOrEmpty(dvr("DiscCode").ToString.Trim) Then
+                ''    oARInvoice.Lines.UserFields.Fields.Item("U_DiscItem").Value = dvr("POSItemCode").ToString.Trim ''Outlet
+                ''End If
 
                 Select Case dvr("SalesCategory").ToString.Trim.ToUpper
                     Case "C"
@@ -189,6 +190,10 @@
                             oARInvoice.Lines.WarehouseCode = sWhsCodeL
                             oARInvoice.Lines.CostingCode = sWhsCodeL
                             oARInvoice.Lines.COGSCostingCode = sWhsCodeL
+                            '' Done changes on 28-nov-2017
+                            If Not String.IsNullOrEmpty(dvr("DiscCode").ToString.Trim) Then
+                                oARInvoice.Lines.UserFields.Fields.Item("U_DiscItem").Value = dvr("POSItemCode").ToString.Trim ''Outlet
+                            End If
                             oARInvoice.Lines.Add()
                     End Select
                 End If
