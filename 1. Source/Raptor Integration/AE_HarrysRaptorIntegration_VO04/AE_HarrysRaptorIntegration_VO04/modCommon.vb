@@ -694,8 +694,8 @@ ERRORDISPLAY: If oDTStatus Is Nothing Then
                 oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2008
             ElseIf p_oCompDef.p_sSQLType = 2014 Then
                 oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2014
-            ElseIf p_oCompDef.p_sSQLType = 2016 Then
-                oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016
+                'ElseIf p_oCompDef.p_sSQLType = 2016 Then
+                '    oCompany.DbServerType = SAPbobsCOM.BoDataServerTypes.dst_MSSQL2016
             End If
 
             oCompany.CompanyDB = p_oCompDef.p_sDataBaseName
